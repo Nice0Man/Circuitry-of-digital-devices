@@ -1,1 +1,1 @@
-task for Evgeniy-Dmitriy
+Разработка SerDes-блока с функцией Alignfeature в языке VHDL
