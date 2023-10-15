@@ -31,6 +31,7 @@ ARCHITECTURE behavior OF Tb_RegesterFile IS
 
 BEGIN
 
+--------------------------------образ тестируемого устройства----------------------------------
 
 	Ul_Reg: entity work.RegisterFile (Behavioral)
 		PORT MAP (
@@ -46,7 +47,11 @@ BEGIN
 			BaseRegister => tb_BaseRegister,
 			DataRegister => tb_DataRegister
 		);
+		
+-----------------------------------------------------------------------------------------------		
 
+---------------------------------Настройка тактового сигнала-----------------------------------
+	
 	clock_gen: process
 	begin
 		loop                --// начало беcконечного цикла 
@@ -55,19 +60,22 @@ BEGIN
 		end loop;           --// конец беcконечного цикла
 	end process;
 		 
-	-- Stimulus proce
+    --тесты
 	stim_proc: process
 	begin
 
---		-- Reading all 32 register
---		
---		for I in 0 to 30 loop
---			tb_ReadRegister1 <= std_logic_vector(to_unsigned(I,5));
---			tb_ReadRegister2 <= std_logic_vector(to_unsigned(I+1,5));
+-----------------------------------------------------------------------------------------------
+	
+---------------------------------Тест чтение регистров-----------------------------------------
+		
+--		for I in 0 to 31 loop
+--			tb_ReadRegister <= std_logic_vector(to_unsigned(I,5));
 --			wait for 25 ns;
 --		end loop;
 		
-		-- Writing a register
+-----------------------------------------------------------------------------------------------
+		
+---------------------------------Тест запись в регистр-----------------------------------------
 		
 		tb_WriteRegister <= "01000"; -- 8
 		tb_WriteData <= x"a5a5a5a5";
@@ -85,7 +93,8 @@ BEGIN
 		
 		tb_reset <= '0';
 		wait for 10 ns;		
-		
+
+-----------------------------------------------------------------------------------------------
 
 		assert false
 			report "End"

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for RegisterFile
-Sun Oct 15 15:34:15 2023
+Sun Oct 15 20:47:01 2023
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -14,9 +14,10 @@ Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Parameter Settings for User Entity Instance: Top-level Entity: |RegisterFile
- 11. Analysis & Synthesis Messages
+  9. Inverted Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |RegisterFile
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -43,7 +44,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-----------------------------+------------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Sun Oct 15 15:34:15 2023          ;
+; Analysis & Synthesis Status ; Successful - Sun Oct 15 20:47:01 2023          ;
 ; Quartus Prime Version       ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
 ; Revision Name               ; RegisterFile                                   ;
 ; Top-level Entity Name       ; RegisterFile                                   ;
@@ -143,13 +144,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                        ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                 ; Library ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------+---------+
-; RegisterFile.vhd                 ; yes             ; User VHDL File  ; C:/Users/Alexandr/Desktop/work/RegisterFile/RegisterFile.vhd ;         ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                        ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                                 ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------------------------+---------+
+; RegisterFile.vhd                 ; yes             ; User VHDL File  ; C:/Users/Alexandr/Desktop/Repository/Circuitry-of-digital-devices/Groups/Alena-Boris-Aleksandr/RegisterFile/RegisterFile.vhd ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -159,14 +160,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------+
 ; Total logic elements                        ; 1736  ;
 ;     -- Combinational with no register       ; 712   ;
-;     -- Register only                        ; 1024  ;
-;     -- Combinational with a register        ; 0     ;
+;     -- Register only                        ; 517   ;
+;     -- Combinational with a register        ; 507   ;
 ;                                             ;       ;
 ; Logic element usage by number of LUT inputs ;       ;
 ;     -- 4 input functions                    ; 648   ;
 ;     -- 3 input functions                    ; 64    ;
 ;     -- 2 input functions                    ; 0     ;
-;     -- 1 input functions                    ; 0     ;
+;     -- 1 input functions                    ; 507   ;
 ;     -- 0 input functions                    ; 0     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
@@ -191,7 +192,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+--------------+
 ; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Entity Name  ; Library Name ;
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+--------------+
-; |RegisterFile              ; 1736 (1736) ; 1024         ; 0          ; 143  ; 0            ; 712 (712)    ; 1024 (1024)       ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |RegisterFile       ; RegisterFile ; work         ;
+; |RegisterFile              ; 1736 (1736) ; 1024         ; 0          ; 143  ; 0            ; 712 (712)    ; 517 (517)         ; 507 (507)        ; 0 (0)           ; 0 (0)      ; |RegisterFile       ; RegisterFile ; work         ;
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -204,11 +205,121 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Total registers                              ; 1024  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 1024  ;
-; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Asynchronous Clear ; 517   ;
+; Number of registers using Asynchronous Load  ; 507   ;
 ; Number of registers using Clock Enable       ; 1024  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++-----------------------------------------------------+
+; Inverted Register Statistics                        ;
++-------------------------------------------+---------+
+; Inverted Register                         ; Fan out ;
++-------------------------------------------+---------+
+; array_reg[25][0]                          ; 1       ;
+; array_reg[21][0]                          ; 1       ;
+; array_reg[17][0]                          ; 1       ;
+; array_reg[29][0]                          ; 1       ;
+; array_reg[27][0]                          ; 1       ;
+; array_reg[23][0]                          ; 1       ;
+; array_reg[19][0]                          ; 1       ;
+; array_reg[31][0]                          ; 1       ;
+; array_reg[9][0]                           ; 1       ;
+; array_reg[11][0]                          ; 1       ;
+; array_reg[5][0]                           ; 1       ;
+; array_reg[7][0]                           ; 1       ;
+; array_reg[1][0]                           ; 1       ;
+; array_reg[0][0]                           ; 2       ;
+; array_reg[3][0]                           ; 1       ;
+; array_reg[13][0]                          ; 1       ;
+; array_reg[15][0]                          ; 1       ;
+; array_reg[29][1]                          ; 1       ;
+; array_reg[26][1]                          ; 1       ;
+; array_reg[22][1]                          ; 1       ;
+; array_reg[18][1]                          ; 1       ;
+; array_reg[28][1]                          ; 1       ;
+; array_reg[23][1]                          ; 1       ;
+; array_reg[27][1]                          ; 1       ;
+; array_reg[19][1]                          ; 1       ;
+; array_reg[31][1]                          ; 1       ;
+; array_reg[6][1]                           ; 1       ;
+; array_reg[7][1]                           ; 1       ;
+; array_reg[10][1]                          ; 1       ;
+; array_reg[11][1]                          ; 1       ;
+; array_reg[2][1]                           ; 2       ;
+; array_reg[0][1]                           ; 2       ;
+; array_reg[3][1]                           ; 1       ;
+; array_reg[14][1]                          ; 1       ;
+; array_reg[15][1]                          ; 1       ;
+; array_reg[22][2]                          ; 1       ;
+; array_reg[30][2]                          ; 1       ;
+; array_reg[21][2]                          ; 1       ;
+; array_reg[20][2]                          ; 1       ;
+; array_reg[23][2]                          ; 1       ;
+; array_reg[31][2]                          ; 1       ;
+; array_reg[5][2]                           ; 1       ;
+; array_reg[6][2]                           ; 1       ;
+; array_reg[4][2]                           ; 1       ;
+; array_reg[7][2]                           ; 1       ;
+; array_reg[13][2]                          ; 1       ;
+; array_reg[14][2]                          ; 1       ;
+; array_reg[12][2]                          ; 1       ;
+; array_reg[15][2]                          ; 1       ;
+; array_reg[25][3]                          ; 1       ;
+; array_reg[26][3]                          ; 1       ;
+; array_reg[24][3]                          ; 1       ;
+; array_reg[27][3]                          ; 1       ;
+; array_reg[31][3]                          ; 1       ;
+; array_reg[9][3]                           ; 1       ;
+; array_reg[10][3]                          ; 1       ;
+; array_reg[8][3]                           ; 1       ;
+; array_reg[11][3]                          ; 1       ;
+; array_reg[0][3]                           ; 2       ;
+; array_reg[14][3]                          ; 1       ;
+; array_reg[13][3]                          ; 1       ;
+; array_reg[12][3]                          ; 1       ;
+; array_reg[15][3]                          ; 1       ;
+; array_reg[25][4]                          ; 1       ;
+; array_reg[21][4]                          ; 1       ;
+; array_reg[17][4]                          ; 1       ;
+; array_reg[29][4]                          ; 1       ;
+; array_reg[28][4]                          ; 1       ;
+; array_reg[27][4]                          ; 1       ;
+; array_reg[23][4]                          ; 1       ;
+; array_reg[19][4]                          ; 1       ;
+; array_reg[31][4]                          ; 1       ;
+; array_reg[9][4]                           ; 1       ;
+; array_reg[11][4]                          ; 1       ;
+; array_reg[5][4]                           ; 1       ;
+; array_reg[7][4]                           ; 1       ;
+; array_reg[1][4]                           ; 1       ;
+; array_reg[0][4]                           ; 2       ;
+; array_reg[3][4]                           ; 1       ;
+; array_reg[13][4]                          ; 1       ;
+; array_reg[15][4]                          ; 1       ;
+; array_reg[26][5]                          ; 1       ;
+; array_reg[22][5]                          ; 1       ;
+; array_reg[18][5]                          ; 1       ;
+; array_reg[23][5]                          ; 1       ;
+; array_reg[27][5]                          ; 1       ;
+; array_reg[19][5]                          ; 1       ;
+; array_reg[31][5]                          ; 1       ;
+; array_reg[6][5]                           ; 1       ;
+; array_reg[7][5]                           ; 1       ;
+; array_reg[10][5]                          ; 1       ;
+; array_reg[11][5]                          ; 1       ;
+; array_reg[2][5]                           ; 1       ;
+; array_reg[0][5]                           ; 2       ;
+; array_reg[3][5]                           ; 1       ;
+; array_reg[14][5]                          ; 1       ;
+; array_reg[15][5]                          ; 1       ;
+; array_reg[22][6]                          ; 1       ;
+; array_reg[30][6]                          ; 1       ;
+; array_reg[21][6]                          ; 1       ;
+; Total number of inverted registers = 507* ;         ;
++-------------------------------------------+---------+
+* Table truncated at 100 items. To change the number of inverted registers reported, set the "Number of Inverted Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------+
@@ -237,21 +348,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Sun Oct 15 15:34:09 2023
+    Info: Processing started: Sun Oct 15 20:46:54 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RegisterFile -c RegisterFile
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file simulation/modelsim/tb_regesterfile.vhd
+    Info (12022): Found design unit 1: Tb_RegesterFile-behavior File: C:/Users/Alexandr/Desktop/Repository/Circuitry-of-digital-devices/Groups/Alena-Boris-Aleksandr/RegisterFile/simulation/modelsim/Tb_RegesterFile.vhd Line: 9
+    Info (12023): Found entity 1: Tb_RegesterFile File: C:/Users/Alexandr/Desktop/Repository/Circuitry-of-digital-devices/Groups/Alena-Boris-Aleksandr/RegisterFile/simulation/modelsim/Tb_RegesterFile.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file registerfile.vhd
-    Info (12022): Found design unit 1: RegisterFile-Behavioral File: C:/Users/Alexandr/Desktop/work/RegisterFile/RegisterFile.vhd Line: 25
-    Info (12023): Found entity 1: RegisterFile File: C:/Users/Alexandr/Desktop/work/RegisterFile/RegisterFile.vhd Line: 5
+    Info (12022): Found design unit 1: RegisterFile-Behavioral File: C:/Users/Alexandr/Desktop/Repository/Circuitry-of-digital-devices/Groups/Alena-Boris-Aleksandr/RegisterFile/RegisterFile.vhd Line: 25
+    Info (12023): Found entity 1: RegisterFile File: C:/Users/Alexandr/Desktop/Repository/Circuitry-of-digital-devices/Groups/Alena-Boris-Aleksandr/RegisterFile/RegisterFile.vhd Line: 5
 Info (12127): Elaborating entity "RegisterFile" for the top level hierarchy
 Info (21057): Implemented 1879 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 45 input pins
     Info (21059): Implemented 98 output pins
     Info (21061): Implemented 1736 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4770 megabytes
-    Info: Processing ended: Sun Oct 15 15:34:15 2023
-    Info: Elapsed time: 00:00:06
+    Info: Peak virtual memory: 4778 megabytes
+    Info: Processing ended: Sun Oct 15 20:47:01 2023
+    Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:14
 
 
