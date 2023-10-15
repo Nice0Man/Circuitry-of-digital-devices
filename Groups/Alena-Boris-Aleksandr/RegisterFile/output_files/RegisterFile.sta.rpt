@@ -1,0 +1,532 @@
+Timing Analyzer report for RegisterFile
+Sun Oct 15 15:34:22 2023
+Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. SDC File List
+  5. Clocks
+  6. Fmax Summary
+  7. Setup Summary
+  8. Hold Summary
+  9. Recovery Summary
+ 10. Removal Summary
+ 11. Minimum Pulse Width Summary
+ 12. Clock Transfers
+ 13. Report TCCS
+ 14. Report RSKM
+ 15. Unconstrained Paths Summary
+ 16. Clock Status Summary
+ 17. Unconstrained Input Ports
+ 18. Unconstrained Output Ports
+ 19. Unconstrained Input Ports
+ 20. Unconstrained Output Ports
+ 21. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++--------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                        ;
++-----------------------+--------------------------------------------------------+
+; Quartus Prime Version ; Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                                 ;
+; Revision Name         ; RegisterFile                                           ;
+; Device Family         ; MAX II                                                 ;
+; Device Name           ; EPM2210F324C5                                          ;
+; Timing Models         ; Final                                                  ;
+; Delay Model           ; Slow Model                                             ;
+; Rise/Fall Delays      ; Unavailable                                            ;
++-----------------------+--------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------+
+; SDC File List                                            ;
++----------------------+--------+--------------------------+
+; SDC File Path        ; Status ; Read at                  ;
++----------------------+--------+--------------------------+
+; RegisterFile.out.sdc ; OK     ; Sun Oct 15 15:34:22 2023 ;
++----------------------+--------+--------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency ; Rise  ; Fall   ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 25.000 ; 40.0 MHz  ; 0.000 ; 12.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
+----------------
+; Fmax Summary ;
+----------------
+No paths to report.
+
+
+-----------------
+; Setup Summary ;
+-----------------
+No paths to report.
+
+
+----------------
+; Hold Summary ;
+----------------
+No paths to report.
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++--------------------------------+
+; Minimum Pulse Width Summary    ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; 12.234 ; 0.000         ;
++-------+--------+---------------+
+
+
+-------------------
+; Clock Transfers ;
+-------------------
+Nothing to report.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 44    ; 44   ;
+; Unconstrained Input Port Paths  ; 8352  ; 8352 ;
+; Unconstrained Output Ports      ; 98    ; 98   ;
+; Unconstrained Output Port Paths ; 1250  ; 1250 ;
++---------------------------------+-------+------+
+
+
++-------------------------------------+
+; Clock Status Summary                ;
++--------+-------+------+-------------+
+; Target ; Clock ; Type ; Status      ;
++--------+-------+------+-------------+
+; clk    ; clk   ; Base ; Constrained ;
++--------+-------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                               ;
++------------------+--------------------------------------------------------------------------------------+
+; Input Port       ; Comment                                                                              ;
++------------------+--------------------------------------------------------------------------------------+
+; ReadRegister[0]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadRegister[1]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadRegister[2]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadRegister[3]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadRegister[4]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RegWrite         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[0]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[1]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[2]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[3]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[4]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[5]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[6]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[7]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[8]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[9]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[10]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[11]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[12]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[13]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[14]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[15]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[16]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[17]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[18]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[19]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[20]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[21]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[22]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[23]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[24]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[25]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[26]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[27]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[28]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[29]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[30]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[31]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteRegister[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteRegister[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteRegister[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteRegister[3] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteRegister[4] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; reset            ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                                      ;
++-------------------------+---------------------------------------------------------------------------------------+
+; Output Port             ; Comment                                                                               ;
++-------------------------+---------------------------------------------------------------------------------------+
+; AccumulatorRegister[0]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[1]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[2]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[3]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[4]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[5]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[6]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[7]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[8]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[9]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[10] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[11] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[12] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[13] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[14] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[15] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[16] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[17] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[18] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[19] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[20] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[21] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[22] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[23] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[24] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[25] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[26] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[27] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[28] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[29] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[30] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[31] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BaseRegister[0]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BaseRegister[1]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BaseRegister[2]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BaseRegister[3]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BaseRegister[4]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DataRegister[16]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DataRegister[17]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DataRegister[18]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DataRegister[19]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DataRegister[20]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DataRegister[21]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DataRegister[22]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DataRegister[23]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DataRegister[24]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DataRegister[25]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DataRegister[26]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DataRegister[27]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DataRegister[28]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DataRegister[29]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DataRegister[30]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DataRegister[31]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[0]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[1]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[2]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[3]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[4]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[5]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[6]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[7]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[8]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[9]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[10]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[11]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[12]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[13]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[14]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[15]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[16]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[17]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[18]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[19]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[20]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[21]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[22]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[23]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[24]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[25]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[26]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[27]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[28]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[29]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[30]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[31]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TimerCountRegister[13]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TimerCountRegister[14]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TimerCountRegister[15]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TimerCountRegister[16]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TimerCountRegister[17]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TimerCountRegister[18]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TimerCountRegister[19]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TimerCountRegister[20]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TimerCountRegister[21]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TimerCountRegister[22]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TimerCountRegister[23]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TimerCountRegister[24]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TimerCountRegister[25]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                               ;
++------------------+--------------------------------------------------------------------------------------+
+; Input Port       ; Comment                                                                              ;
++------------------+--------------------------------------------------------------------------------------+
+; ReadRegister[0]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadRegister[1]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadRegister[2]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadRegister[3]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadRegister[4]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RegWrite         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[0]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[1]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[2]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[3]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[4]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[5]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[6]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[7]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[8]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[9]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[10]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[11]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[12]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[13]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[14]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[15]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[16]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[17]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[18]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[19]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[20]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[21]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[22]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[23]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[24]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[25]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[26]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[27]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[28]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[29]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[30]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteData[31]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteRegister[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteRegister[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteRegister[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteRegister[3] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; WriteRegister[4] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; reset            ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                                      ;
++-------------------------+---------------------------------------------------------------------------------------+
+; Output Port             ; Comment                                                                               ;
++-------------------------+---------------------------------------------------------------------------------------+
+; AccumulatorRegister[0]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[1]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[2]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[3]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[4]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[5]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[6]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[7]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[8]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[9]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[10] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[11] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[12] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[13] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[14] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[15] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[16] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[17] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[18] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[19] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[20] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[21] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[22] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[23] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[24] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[25] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[26] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[27] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[28] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[29] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[30] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AccumulatorRegister[31] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BaseRegister[0]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BaseRegister[1]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BaseRegister[2]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BaseRegister[3]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; BaseRegister[4]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DataRegister[16]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DataRegister[17]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DataRegister[18]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DataRegister[19]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DataRegister[20]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DataRegister[21]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DataRegister[22]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DataRegister[23]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DataRegister[24]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DataRegister[25]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DataRegister[26]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DataRegister[27]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DataRegister[28]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DataRegister[29]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DataRegister[30]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; DataRegister[31]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[0]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[1]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[2]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[3]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[4]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[5]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[6]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[7]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[8]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[9]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[10]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[11]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[12]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[13]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[14]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[15]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[16]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[17]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[18]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[19]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[20]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[21]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[22]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[23]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[24]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[25]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[26]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[27]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[28]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[29]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[30]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ReadData[31]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TimerCountRegister[13]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TimerCountRegister[14]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TimerCountRegister[15]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TimerCountRegister[16]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TimerCountRegister[17]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TimerCountRegister[18]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TimerCountRegister[19]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TimerCountRegister[20]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TimerCountRegister[21]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TimerCountRegister[22]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TimerCountRegister[23]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TimerCountRegister[24]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TimerCountRegister[25]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+    Info: Processing started: Sun Oct 15 15:34:21 2023
+Info: Command: quartus_sta RegisterFile -c RegisterFile
+Info: qsta_default_script.tcl version: #1
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332104): Reading SDC File: 'RegisterFile.out.sdc'
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info (332140): No fmax paths to report
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Info (332140): No Setup paths to report
+Info (332140): No Hold paths to report
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 12.234
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    12.234               0.000 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4701 megabytes
+    Info: Processing ended: Sun Oct 15 15:34:22 2023
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
