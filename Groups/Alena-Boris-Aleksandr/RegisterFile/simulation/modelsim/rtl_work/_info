@@ -10,7 +10,7 @@ z2
 cModel Technology
 Z0 dC:/Users/Alexandr/Desktop/Repository/Circuitry-of-digital-devices/Groups/Alena-Boris-Aleksandr/RegisterFile/simulation/modelsim
 Eregisterfile
-Z1 w1697392013
+Z1 w1697626543
 Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
@@ -20,13 +20,13 @@ Z5 8C:/Users/Alexandr/Desktop/Repository/Circuitry-of-digital-devices/Groups/Ale
 Z6 FC:/Users/Alexandr/Desktop/Repository/Circuitry-of-digital-devices/Groups/Alena-Boris-Aleksandr/RegisterFile/RegisterFile.vhd
 l0
 L5 1
-VIj?mP2;4d=X8]kI?iP@I:2
-!s100 ZY5C`^52i64DU0ZklcAhj0
+VN?Z;JNXm1fWiY:K@dKhgk2
+!s100 6eD_C7`i1F;X<b^`LUDNi3
 Z7 OV;C;2021.1;73
 31
-Z8 !s110 1697392056
+Z8 !s110 1697626859
 !i10b 1
-Z9 !s108 1697392056.000000
+Z9 !s108 1697626859.000000
 Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/Alexandr/Desktop/Repository/Circuitry-of-digital-devices/Groups/Alena-Boris-Aleksandr/RegisterFile/RegisterFile.vhd|
 Z11 !s107 C:/Users/Alexandr/Desktop/Repository/Circuitry-of-digital-devices/Groups/Alena-Boris-Aleksandr/RegisterFile/RegisterFile.vhd|
 !i113 1
@@ -36,12 +36,12 @@ Abehavioral
 R2
 R3
 R4
-Z14 DEx4 work 12 registerfile 0 22 Ij?mP2;4d=X8]kI?iP@I:2
+Z14 DEx4 work 12 registerfile 0 22 N?Z;JNXm1fWiY:K@dKhgk2
 !i122 0
-l69
-L25 75
-Vob`3eQcz@nJcEPI>>I3RS3
-!s100 jXWjm0WH_EHUc28G54h=:3
+l39
+L27 52
+Vi=QXD7KnNhj0V1Fe>5eK61
+!s100 cWd]<C@2aS3F7g26ZS;>c2
 R7
 31
 R8
@@ -53,7 +53,7 @@ R11
 R12
 R13
 Etb_regesterfile
-Z15 w1697392012
+Z15 w1697626830
 R2
 R3
 R4
@@ -67,10 +67,10 @@ Vb;06]XSkKP_0GhmHe[95C0
 !s100 ]3A28F`DE[CU>caaCcFT`1
 R7
 31
-R8
+Z18 !s110 1697626860
 !i10b 1
 R9
-Z18 !s90 -reportprogress|300|-93|-work|work|C:/Users/Alexandr/Desktop/Repository/Circuitry-of-digital-devices/Groups/Alena-Boris-Aleksandr/RegisterFile/simulation/modelsim/Tb_RegesterFile.vhd|
+Z19 !s90 -reportprogress|300|-93|-work|work|C:/Users/Alexandr/Desktop/Repository/Circuitry-of-digital-devices/Groups/Alena-Boris-Aleksandr/RegisterFile/simulation/modelsim/Tb_RegesterFile.vhd|
 !s107 C:/Users/Alexandr/Desktop/Repository/Circuitry-of-digital-devices/Groups/Alena-Boris-Aleksandr/RegisterFile/simulation/modelsim/Tb_RegesterFile.vhd|
 !i113 1
 R12
@@ -82,17 +82,17 @@ R3
 R4
 DEx4 work 15 tb_regesterfile 0 22 b;06]XSkKP_0GhmHe[95C0
 !i122 1
-l32
-L9 96
-VNm0_8`9T:NjjP:lV7TOVL3
-!s100 K5KkgjU_5CjR8SnhcTEhR0
+l33
+L9 120
+VLYIn6@K[U3cIG:D;mTS>13
+!s100 GZjCMiMk81];aFoi?ZURb2
 R7
 31
-R8
+R18
 !i10b 1
 R9
-R18
-Z19 !s107 C:/Users/Alexandr/Desktop/Repository/Circuitry-of-digital-devices/Groups/Alena-Boris-Aleksandr/RegisterFile/simulation/modelsim/Tb_RegesterFile.vhd|
+R19
+Z20 !s107 C:/Users/Alexandr/Desktop/Repository/Circuitry-of-digital-devices/Groups/Alena-Boris-Aleksandr/RegisterFile/simulation/modelsim/Tb_RegesterFile.vhd|
 !i113 1
 R12
 R13
