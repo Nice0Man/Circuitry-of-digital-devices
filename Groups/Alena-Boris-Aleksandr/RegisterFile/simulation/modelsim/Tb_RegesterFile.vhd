@@ -34,7 +34,7 @@ BEGIN
 
 --------------------------------Testing device image----------------------------------
 
-	Ul_Reg: entity work.RegisterFile (Behavioral)
+	U1_Reg: entity work.RegisterFile (Behavioral)
 		PORT MAP (
 		   clk => tb_clk,
 		   reset => tb_reset,
@@ -62,15 +62,13 @@ BEGIN
 		end loop;           --// End an infinite loop
 	end process;
 		 
-    --тесты
+-----------------------------------------------------------------------------------------------
+
+---------------------------------Write and read register test----------------------------------
+ 
 	stim_proc: process
 	begin
-
------------------------------------------------------------------------------------------------
-	
-		
----------------------------------Write in register test-----------------------------------------
-
+			
 		
 		tb_WriteRegister <= "01000"; -- 8
 		tb_WriteData <= x"a5a5a5a5";
@@ -117,12 +115,15 @@ BEGIN
 		
 		tb_EnableWrite <= '0';
 		wait for 10 ns;
-		
------------------------------------------------------------------------------------------------
 
+		
 		assert false
 			report "End"
 			severity failure;
+
 			
 	end process;
+
+-----------------------------------------------------------------------------------------------
+	
 end;
