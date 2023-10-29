@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition"
 
--- DATE "10/18/2023 13:55:59"
+-- DATE "10/29/2023 18:42:02"
 
 -- 
 -- Device: Altera EPM2210F324C5 Package FBGA324
@@ -41,11 +41,11 @@ ENTITY 	RegisterFile IS
 	WriteData : IN std_logic_vector(31 DOWNTO 0);
 	EnableWrite : IN std_logic;
 	EnableRead : IN std_logic;
-	ReadData : OUT std_logic_vector(31 DOWNTO 0);
-	TimerCountRegister : OUT std_logic_vector(25 DOWNTO 13);
-	AccumulatorRegister : OUT std_logic_vector(31 DOWNTO 0);
-	BaseRegister : OUT std_logic_vector(4 DOWNTO 0);
-	DataRegister : OUT std_logic_vector(31 DOWNTO 16)
+	ReadData : BUFFER std_logic_vector(31 DOWNTO 0);
+	TimerCountRegister : BUFFER std_logic_vector(25 DOWNTO 13);
+	AccumulatorRegister : BUFFER std_logic_vector(31 DOWNTO 0);
+	BaseRegister : BUFFER std_logic_vector(4 DOWNTO 0);
+	DataRegister : BUFFER std_logic_vector(31 DOWNTO 16)
 	);
 END RegisterFile;
 

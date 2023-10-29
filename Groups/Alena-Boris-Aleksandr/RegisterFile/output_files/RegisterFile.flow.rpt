@@ -1,5 +1,5 @@
 Flow report for RegisterFile
-Wed Oct 18 13:55:59 2023
+Sun Oct 29 18:42:03 2023
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------------+
 ; Flow Summary                                                           ;
 +-----------------------+------------------------------------------------+
-; Flow Status           ; Successful - Wed Oct 18 13:55:59 2023          ;
+; Flow Status           ; Successful - Sun Oct 29 18:42:03 2023          ;
 ; Quartus Prime Version ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
 ; Revision Name         ; RegisterFile                                   ;
 ; Top-level Entity Name ; RegisterFile                                   ;
@@ -60,7 +60,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/18/2023 13:55:43 ;
+; Start date & time ; 10/29/2023 18:41:47 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; RegisterFile        ;
 +-------------------+---------------------+
@@ -71,7 +71,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------+-----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                       ; Value                                   ; Default Value ; Entity Name ; Section Id                        ;
 +---------------------------------------+-----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                 ; 103412825361003.169762654315192         ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID                 ; 103412825361003.169859410707212         ; --            ; --          ; --                                ;
 ; EDA_DESIGN_INSTANCE_NAME              ; NA                                      ; --            ; --          ; Tb_RegesterFile                   ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST       ; Off                                     ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST       ; Off                                     ; --            ; --          ; eda_board_design_boundary_scan    ;
@@ -82,6 +82,7 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_SIMULATION_TOOL                   ; ModelSim (VHDL)                         ; <None>        ; --          ; --                                ;
 ; EDA_TEST_BENCH_ENABLE_STATUS          ; TEST_BENCH_MODE                         ; --            ; --          ; eda_simulation                    ;
 ; EDA_TEST_BENCH_FILE                   ; simulation/modelsim/Tb_RegesterFile.vhd ; --            ; --          ; Tb_RegesterFile                   ;
+; EDA_TEST_BENCH_FILE                   ; Tester_RegisterFile.vhd                 ; --            ; --          ; Tb_RegesterFile                   ;
 ; EDA_TEST_BENCH_MODULE_NAME            ; Tb_RegesterFile                         ; --            ; --          ; Tb_RegesterFile                   ;
 ; EDA_TEST_BENCH_NAME                   ; Tb_RegesterFile                         ; --            ; --          ; eda_simulation                    ;
 ; EDA_TIME_SCALE                        ; 1 ps                                    ; --            ; --          ; eda_simulation                    ;
@@ -99,12 +100,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4775 MB             ; 00:00:15                           ;
-; Fitter               ; 00:00:04     ; 1.1                     ; 5920 MB             ; 00:00:10                           ;
+; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4780 MB             ; 00:00:14                           ;
+; Fitter               ; 00:00:04     ; 1.1                     ; 5921 MB             ; 00:00:09                           ;
 ; Assembler            ; 00:00:00     ; 1.0                     ; 4675 MB             ; 00:00:00                           ;
 ; Timing Analyzer      ; 00:00:01     ; 1.0                     ; 4701 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4632 MB             ; 00:00:00                           ;
-; Total                ; 00:00:12     ; --                      ; --                  ; 00:00:26                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4632 MB             ; 00:00:00                           ;
+; Total                ; 00:00:13     ; --                      ; --                  ; 00:00:24                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
