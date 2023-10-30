@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition"
 
--- DATE "10/29/2023 18:42:02"
+-- DATE "10/30/2023 13:56:57"
 
 -- 
 -- Device: Altera EPM2210F324C5 Package FBGA324

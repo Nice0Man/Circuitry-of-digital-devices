@@ -2,9 +2,6 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-use work.Tester_RegisterFile;
-use work.RegisterFile;
-
 ENTITY Tb_RegesterFile IS
 END Tb_RegesterFile;
 
@@ -13,7 +10,7 @@ ARCHITECTURE behavior OF Tb_RegesterFile IS
 	constant reg_width : integer := 32;
 	constant lnum_reg : integer := 5;
 	
---	constant period : time := 10 ns;
+
 
 	--Inputs
    signal tb_clk : std_logic; -- Tactation singal
@@ -68,17 +65,10 @@ ARCHITECTURE behavior OF Tb_RegesterFile IS
 			WriteData : out STD_LOGIC_VECTOR (reg_width-1 downto 0);
 			EnableWrite : out STD_LOGIC;
 			EnableRead : out STD_LOGIC
---			ReadData : in STD_LOGIC_VECTOR (reg_width-1 downto 0);
---			TimerCountRegister: in STD_LOGIC_VECTOR(25 downto 13);
---			AccumulatorRegister: in STD_LOGIC_VECTOR(31 downto 0);
---			BaseRegister: in STD_LOGIC_VECTOR(4 downto 0);
---			DataRegister: in STD_LOGIC_VECTOR(31 downto 16)
 			);
 	 END COMPONENT;
 
 	
-	--FOR ALL : RegisterFile USE ENTITY work.RegisterFile.RegisterFile;
-   --FOR ALL : Tester USE ENTITY work.RegisterFile.Tester;
 	
 	
 BEGIN
@@ -100,7 +90,7 @@ BEGIN
 			BaseRegister => tb_BaseRegister,
 			DataRegister => tb_DataRegister
 		);
-	U2_Reg: entity work.Tester_RegisterFile
+	U2_Reg: Tester_RegisterFile
 		PORT MAP (
 		   clk => tb_clk,
 		   reset => tb_reset,
@@ -109,11 +99,6 @@ BEGIN
 			WriteData => tb_WriteData,
 			EnableWrite => tb_EnableWrite,
 			EnableRead => tb_EnableRead
---			ReadData => tb_ReadData,
---			TimerCountRegister => tb_TimerCountRegister,
---			AccumulatorRegister => tb_AccumulatorRegister,
---			BaseRegister => tb_BaseRegister,
---			DataRegister => tb_DataRegister
 		);		
 -----------------------------------------------------------------------------------------------		
 

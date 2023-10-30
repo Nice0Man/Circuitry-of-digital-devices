@@ -1,5 +1,5 @@
 EDA Netlist Writer report for RegisterFile
-Sun Oct 29 18:42:03 2023
+Mon Oct 30 13:56:58 2023
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -37,7 +37,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sun Oct 29 18:42:03 2023 ;
+; EDA Netlist Writer Status ; Successful - Mon Oct 30 13:56:58 2023 ;
 ; Revision Name             ; RegisterFile                          ;
 ; Top-level Entity Name     ; RegisterFile                          ;
 ; Family                    ; MAX II                                ;
@@ -66,13 +66,13 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------------------------+-----------------+
 
 
-+----------------------------------------------------------------------------------+
-; Simulation Generated Files                                                       ;
-+----------------------------------------------------------------------------------+
-; Generated Files                                                                  ;
-+----------------------------------------------------------------------------------+
-; C:/Users/Alexandr/Desktop/work/RegisterFile/simulation/modelsim/RegisterFile.vho ;
-+----------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                                                                       ;
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                                                                  ;
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; C:/Users/Alexandr/Desktop/Repository/Circuitry-of-digital-devices/Groups/Alena-Boris-Aleksandr/RegisterFile/simulation/modelsim/RegisterFile.vho ;
++--------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -81,13 +81,13 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Sun Oct 29 18:42:02 2023
+    Info: Processing started: Mon Oct 30 13:56:56 2023
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off RegisterFile -c RegisterFile
-Info (204019): Generated file RegisterFile.vho in folder "C:/Users/Alexandr/Desktop/work/RegisterFile/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file RegisterFile.vho in folder "C:/Users/Alexandr/Desktop/Repository/Circuitry-of-digital-devices/Groups/Alena-Boris-Aleksandr/RegisterFile/simulation/modelsim/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 4632 megabytes
-    Info: Processing ended: Sun Oct 29 18:42:03 2023
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:00
+    Info: Processing ended: Mon Oct 30 13:56:58 2023
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
 
 

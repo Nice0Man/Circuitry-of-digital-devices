@@ -1,5 +1,5 @@
 Analysis & Synthesis report for RegisterFile
-Sun Oct 29 18:41:54 2023
+Mon Oct 30 13:56:39 2023
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -44,7 +44,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-----------------------------+------------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Sun Oct 29 18:41:54 2023          ;
+; Analysis & Synthesis Status ; Successful - Mon Oct 30 13:56:39 2023          ;
 ; Quartus Prime Version       ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
 ; Revision Name               ; RegisterFile                                   ;
 ; Top-level Entity Name       ; RegisterFile                                   ;
@@ -144,13 +144,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                        ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                 ; Library ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------+---------+
-; RegisterFile.vhd                 ; yes             ; User VHDL File  ; C:/Users/Alexandr/Desktop/work/RegisterFile/RegisterFile.vhd ;         ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                        ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                                 ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------------------------+---------+
+; RegisterFile.vhd                 ; yes             ; User VHDL File  ; C:/Users/Alexandr/Desktop/Repository/Circuitry-of-digital-devices/Groups/Alena-Boris-Aleksandr/RegisterFile/RegisterFile.vhd ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -380,27 +380,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Sun Oct 29 18:41:47 2023
+    Info: Processing started: Mon Oct 30 13:56:24 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RegisterFile -c RegisterFile
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file simulation/modelsim/tb_regesterfile.vhd
-    Info (12022): Found design unit 1: Tb_RegesterFile-behavior File: C:/Users/Alexandr/Desktop/work/RegisterFile/simulation/modelsim/Tb_RegesterFile.vhd Line: 11
-    Info (12023): Found entity 1: Tb_RegesterFile File: C:/Users/Alexandr/Desktop/work/RegisterFile/simulation/modelsim/Tb_RegesterFile.vhd Line: 8
+    Info (12022): Found design unit 1: Tb_RegesterFile-behavior File: C:/Users/Alexandr/Desktop/Repository/Circuitry-of-digital-devices/Groups/Alena-Boris-Aleksandr/RegisterFile/simulation/modelsim/Tb_RegesterFile.vhd Line: 8
+    Info (12023): Found entity 1: Tb_RegesterFile File: C:/Users/Alexandr/Desktop/Repository/Circuitry-of-digital-devices/Groups/Alena-Boris-Aleksandr/RegisterFile/simulation/modelsim/Tb_RegesterFile.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file registerfile.vhd
-    Info (12022): Found design unit 1: RegisterFile-Behavioral File: C:/Users/Alexandr/Desktop/work/RegisterFile/RegisterFile.vhd Line: 27
-    Info (12023): Found entity 1: RegisterFile File: C:/Users/Alexandr/Desktop/work/RegisterFile/RegisterFile.vhd Line: 5
+    Info (12022): Found design unit 1: RegisterFile-Behavioral File: C:/Users/Alexandr/Desktop/Repository/Circuitry-of-digital-devices/Groups/Alena-Boris-Aleksandr/RegisterFile/RegisterFile.vhd Line: 27
+    Info (12023): Found entity 1: RegisterFile File: C:/Users/Alexandr/Desktop/Repository/Circuitry-of-digital-devices/Groups/Alena-Boris-Aleksandr/RegisterFile/RegisterFile.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file tester_registerfile.vhd
-    Info (12022): Found design unit 1: Tester_RegisterFile-behavior_tester File: C:/Users/Alexandr/Desktop/work/RegisterFile/Tester_RegisterFile.vhd Line: 27
-    Info (12023): Found entity 1: Tester_RegisterFile File: C:/Users/Alexandr/Desktop/work/RegisterFile/Tester_RegisterFile.vhd Line: 5
+    Info (12022): Found design unit 1: Tester_RegisterFile-behavior_tester File: C:/Users/Alexandr/Desktop/Repository/Circuitry-of-digital-devices/Groups/Alena-Boris-Aleksandr/RegisterFile/Tester_RegisterFile.vhd Line: 22
+    Info (12023): Found entity 1: Tester_RegisterFile File: C:/Users/Alexandr/Desktop/Repository/Circuitry-of-digital-devices/Groups/Alena-Boris-Aleksandr/RegisterFile/Tester_RegisterFile.vhd Line: 5
 Info (12127): Elaborating entity "RegisterFile" for the top level hierarchy
 Info (21057): Implemented 1979 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 46 input pins
     Info (21059): Implemented 98 output pins
     Info (21061): Implemented 1835 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4780 megabytes
-    Info: Processing ended: Sun Oct 29 18:41:54 2023
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:14
+    Info: Peak virtual memory: 4772 megabytes
+    Info: Processing ended: Mon Oct 30 13:56:39 2023
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:33
 
 

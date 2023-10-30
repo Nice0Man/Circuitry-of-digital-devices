@@ -15,11 +15,6 @@ entity Tester_RegisterFile is
 			WriteData : out STD_LOGIC_VECTOR (reg_width-1 downto 0);
 			EnableWrite : out STD_LOGIC;
 			EnableRead : out STD_LOGIC
---			ReadData : in STD_LOGIC_VECTOR (reg_width-1 downto 0);
---			TimerCountRegister: in STD_LOGIC_VECTOR(25 downto 13);
---			AccumulatorRegister: in STD_LOGIC_VECTOR(31 downto 0);
---			BaseRegister: in STD_LOGIC_VECTOR(4 downto 0);
---			DataRegister: in STD_LOGIC_VECTOR(31 downto 16)
 			);
     
 end entity;
@@ -54,24 +49,23 @@ clk <= int_clk;
 		WriteRegister <= "01000"; -- 8
 		WriteData <= x"a5a5a5a5";
 		ReadRegister <= std_logic_vector(to_unsigned(6,5));
-		wait for 50 ns;
+		wait for 50.5 ns;
 		
 		reset <= '1';
-		wait for 10 ns;
+		wait for 12 ns;
 		
-		reset <= '0';
-		wait for 10 ns;
 
 
 		EnableWrite <= '1';
 		EnableRead <= '1';
-		reset <= '1';
 		wait for 10 ns;
 
 		EnableWrite <= '0';
 		EnableRead <= '0';
-		reset <= '0';
 		wait for 15 ns;
+		
+		reset <= '0';
+		wait for 10 ns;
 		
 		EnableWrite <= '1';
 		EnableRead <= '1';	
@@ -85,10 +79,10 @@ clk <= int_clk;
 		WriteData <= x"b4b4b4b4";
 		ReadRegister <= std_logic_vector(to_unsigned(8,5));
 		
-		EnableRead <= '1';
+		EnableRead <= '1' after 1 ns;
       wait for 10 ns;
 		
-		EnableRead <= '0';
+		EnableRead <= '0' after 1 ns;
 		wait for 10 ns;
 		
 		EnableWrite <= '1';
@@ -96,11 +90,11 @@ clk <= int_clk;
 		
 		EnableWrite <= '0';
 		wait for 10 ns;
-		
 
---		assert false
---			report "End"
---			severity failure;
+		
+		assert false
+			report "End"
+			severity failure;
 			
 	end process;
 	
