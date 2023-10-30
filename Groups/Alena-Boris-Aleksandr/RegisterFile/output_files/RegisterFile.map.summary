@@ -1,9 +1,9 @@
-Analysis & Synthesis Status : Successful - Sun Oct 15 20:47:01 2023
+Analysis & Synthesis Status : Successful - Sun Oct 29 18:41:54 2023
 Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 Revision Name : RegisterFile
 Top-level Entity Name : RegisterFile
 Family : MAX II
-Total logic elements : 1,736
-Total pins : 143
+Total logic elements : 1,835
+Total pins : 144
 Total virtual pins : 0
 UFM blocks : 0 / 1 ( 0 % )

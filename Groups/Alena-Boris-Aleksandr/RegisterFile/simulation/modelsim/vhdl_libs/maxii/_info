@@ -8,16 +8,16 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-dC:/Users/Alexandr/Desktop/work/RegisterFile/simulation/modelsim
+Z0 dC:/Users/Alexandr/Desktop/work/RegisterFile/simulation/modelsim
 Emaxii_and1
-Z0 w1666771506
-Z1 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
-Z2 DPx4 work 15 maxii_atom_pack 0 22 AkDZWEEffgHP:IJ1X7BnE2
-Z3 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
-Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z5 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 72
-Z6 dC:/Users/Alexandr/Desktop/Repository/Circuitry-of-digital-devices/Groups/Alena-Boris-Aleksandr/RegisterFile/simulation/modelsim
+Z1 w1666771506
+Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z3 DPx4 work 15 maxii_atom_pack 0 22 AkDZWEEffgHP:IJ1X7BnE2
+Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z6 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 168
+R0
 Z7 8c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/maxii_atoms.vhd
 Z8 Fc:/intelfpga_lite/22.1std/quartus/eda/sim_lib/maxii_atoms.vhd
 l0
@@ -26,22 +26,22 @@ VgA6;TmG5N:_l_=@eY?gRW0
 !s100 Ng[e;0bBb8OZN3QoMZdl?3
 Z9 OV;C;2021.1;73
 31
-Z10 !s110 1697392055
+Z10 !s110 1698594081
 !i10b 1
-Z11 !s108 1697392055.000000
+Z11 !s108 1698594080.000000
 Z12 !s90 -reportprogress|300|-93|-work|maxii|c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/maxii_atoms.vhd|
 Z13 !s107 c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/maxii_atoms.vhd|
 !i113 1
 Z14 o-93 -work maxii
 Z15 tExplicit 1 CvgOpt 0
 Aaltvital
-R1
 R2
 R3
 R4
 R5
+R6
 DEx4 work 10 maxii_and1 0 22 gA6;TmG5N:_l_=@eY?gRW0
-!i122 72
+!i122 168
 l1449
 L1444 49
 V[_`3<]9eOE^]g5QBK5gC@1
@@ -57,14 +57,14 @@ R13
 R14
 R15
 Emaxii_asynch_lcell
-R0
-R2
 R1
 R3
+R2
 R4
 R5
-!i122 72
 R6
+!i122 168
+R0
 R7
 R8
 l0
@@ -82,13 +82,13 @@ R13
 R14
 R15
 Avital_le
-R2
-R1
 R3
+R2
 R4
 R5
+R6
 Z16 DEx4 work 18 maxii_asynch_lcell 0 22 ChN4ZX@dk_cFH<899?NdI1
-!i122 72
+!i122 168
 l1675
 L1657 203
 VGQPSH0;z4h[X0oJhE6nKe3
@@ -104,13 +104,13 @@ R13
 R14
 R15
 Pmaxii_atom_pack
-R1
-R3
+R2
 R4
 R5
-!i122 72
-R0
 R6
+!i122 168
+R1
+R0
 R7
 R8
 l0
@@ -129,12 +129,12 @@ R13
 R14
 R15
 Bbody
-R2
-R1
 R3
+R2
 R4
 R5
-!i122 72
+R6
+!i122 168
 l0
 L85 1
 VI7=QC66;6H5MM?5^bia2Q2
@@ -150,14 +150,14 @@ R13
 R14
 R15
 Pmaxii_components
-R1
 R2
 R3
 R4
 R5
-!i122 73
-w1666771507
 R6
+!i122 169
+w1666771507
+R0
 8c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/maxii_components.vhd
 Fc:/intelfpga_lite/22.1std/quartus/eda/sim_lib/maxii_components.vhd
 l0
@@ -168,21 +168,21 @@ R9
 31
 R10
 !i10b 1
-R11
+!s108 1698594081.000000
 !s90 -reportprogress|300|-93|-work|maxii|c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/maxii_components.vhd|
 !s107 c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/maxii_components.vhd|
 !i113 1
 R14
 R15
 Emaxii_crcblock
-R0
 R1
-R3
 R2
 R4
+R3
 R5
-!i122 72
 R6
+!i122 168
+R0
 R7
 R8
 l0
@@ -200,13 +200,13 @@ R13
 R14
 R15
 Aarchitecture_crcblock
-R1
-R3
 R2
 R4
+R3
 R5
+R6
 DEx4 work 14 maxii_crcblock 0 22 calJbDZ=n<SDAB6=7RAR33
-!i122 72
+!i122 168
 l1558
 L1557 5
 V<]W73>@GQ]UQHMZQ:b35A2
@@ -222,14 +222,14 @@ R13
 R14
 R15
 Emaxii_dffe
-R0
-R2
 R1
 R3
+R2
 R4
 R5
-!i122 72
 R6
+!i122 168
+R0
 R7
 R8
 l0
@@ -247,13 +247,13 @@ R13
 R14
 R15
 Abehave
-R2
-R1
 R3
+R2
 R4
 R5
+R6
 DEx4 work 10 maxii_dffe 0 22 PY[iTfQU390cUNaZ]eWk^0
-!i122 72
+!i122 168
 l1104
 L1095 131
 VlgCigQbJA`VQU5__^m39i0
@@ -269,15 +269,15 @@ R13
 R14
 R15
 Emaxii_io
-R0
-R2
 R1
 R3
-Z18 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+R2
 R4
+Z18 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
 R5
-!i122 72
 R6
+!i122 168
+R0
 R7
 R8
 l0
@@ -295,14 +295,14 @@ R13
 R14
 R15
 Abehave
-R2
-R1
 R3
-R18
+R2
 R4
+R18
 R5
+R6
 DEx4 work 8 maxii_io 0 22 j=R;[<i1l:0K1fC<I=`bR0
-!i122 72
+!i122 168
 l3170
 L3164 159
 Vk9onZ>>7j=DgP4aRe@Kze1
@@ -318,14 +318,14 @@ R13
 R14
 R15
 Emaxii_jtag
-R0
 R1
-R3
 R2
 R4
+R3
 R5
-!i122 72
 R6
+!i122 168
+R0
 R7
 R8
 l0
@@ -343,13 +343,13 @@ R13
 R14
 R15
 Aarchitecture_jtag
-R1
-R3
 R2
 R4
+R3
 R5
+R6
 DEx4 work 10 maxii_jtag 0 22 al?@iD5[cBV>IC]<cz2LS1
-!i122 72
+!i122 168
 l1528
 L1527 4
 VJ623DYko@3WSYPDzJeMWS0
@@ -365,16 +365,16 @@ R13
 R14
 R15
 Emaxii_lcell
-R0
+R1
 Z19 DEx4 work 20 maxii_lcell_register 0 22 ]H[h=2P4i2bC@zJX4;@hk3
 R16
-R2
-R1
 R3
+R2
 R4
 R5
-!i122 72
 R6
+!i122 168
+R0
 R7
 R8
 l0
@@ -392,13 +392,13 @@ R13
 R14
 R15
 Avital_le_atom
-R2
-R1
 R3
+R2
 R4
 R5
+R6
 DEx4 work 11 maxii_lcell 0 22 UkC3A4MiAV>1WXPcfTI=72
-!i122 72
+!i122 168
 l2381
 L2244 200
 V1TjG>7G_7WW[AQRQ5kV>Q3
@@ -414,14 +414,14 @@ R13
 R14
 R15
 Emaxii_lcell_register
-R0
-R2
 R1
 R3
+R2
 R4
 R5
-!i122 72
 R6
+!i122 168
+R0
 R7
 R8
 l0
@@ -439,13 +439,13 @@ R13
 R14
 R15
 Avital_le_reg
-R2
-R1
 R3
+R2
 R4
 R5
+R6
 R19
-!i122 72
+!i122 168
 l1970
 L1936 248
 V>L[HTcke7WhkKfV`kJikk2
@@ -461,14 +461,14 @@ R13
 R14
 R15
 Emaxii_mux21
-R0
 R1
 R2
 R3
 R4
 R5
-!i122 72
 R6
+!i122 168
+R0
 R7
 R8
 l0
@@ -486,13 +486,13 @@ R13
 R14
 R15
 Aaltvital
-R1
 R2
 R3
 R4
 R5
+R6
 DEx4 work 11 maxii_mux21 0 22 5`:FW]bB2d6SB67UWd8S33
-!i122 72
+!i122 168
 l1263
 L1258 53
 V[B=S7@RaCFzzh=I3JNRcU1
@@ -508,14 +508,14 @@ R13
 R14
 R15
 Emaxii_mux41
-R0
 R1
 R2
 R3
 R4
 R5
-!i122 72
 R6
+!i122 168
+R0
 R7
 R8
 l0
@@ -533,13 +533,13 @@ R13
 R14
 R15
 Aaltvital
-R1
 R2
 R3
 R4
 R5
+R6
 DEx4 work 11 maxii_mux41 0 22 dgLTcE0:o0FXL`E[kPLBZ1
-!i122 72
+!i122 168
 l1357
 L1351 64
 VaW7<f6kM16[gl^EIMJkbO3
@@ -555,11 +555,11 @@ R13
 R14
 R15
 Pmaxii_pllpack
-R4
 R5
-!i122 72
-R0
 R6
+!i122 168
+R1
+R0
 R7
 R8
 l0
@@ -579,9 +579,9 @@ R14
 R15
 Bbody
 DPx4 work 13 maxii_pllpack 0 22 P>V_ChkFf5IaJ9[n;P:a]3
-R4
 R5
-!i122 72
+R6
+!i122 168
 l0
 L432 1
 Vh_`b?Xm2i^Xj[=1?K206F2
@@ -597,14 +597,14 @@ R13
 R14
 R15
 Emaxii_routing_wire
-R0
-R2
 R1
 R3
+R2
 R4
 R5
-!i122 72
 R6
+!i122 168
+R0
 R7
 R8
 l0
@@ -622,13 +622,13 @@ R13
 R14
 R15
 Abehave
-R2
-R1
 R3
+R2
 R4
 R5
+R6
 DEx4 work 18 maxii_routing_wire 0 22 PD_Aa7L2UR9b5JTP5z^EX1
-!i122 72
+!i122 168
 l3359
 L3355 44
 V9lz5`YI:oMJc5JFz[[`lS3
@@ -644,16 +644,16 @@ R13
 R14
 R15
 Emaxii_ufm
-R0
-R2
 R1
 R3
+R2
+R4
 Z20 DPx4 ieee 16 std_logic_signed 0 22 C<aanc0R`<LWPSe[JYRP^3
 R18
-R4
 R5
-!i122 72
 R6
+!i122 168
+R0
 R7
 R8
 l0
@@ -671,15 +671,15 @@ R13
 R14
 R15
 Abehave
-R2
-R1
 R3
+R2
+R4
 R20
 R18
-R4
 R5
+R6
 DEx4 work 9 maxii_ufm 0 22 B6BCFl5=z^2fN_IHb[G0m3
-!i122 72
+!i122 168
 l2603
 L2553 570
 V^=mJ[ZV<P3YIA49KH=1Ga3

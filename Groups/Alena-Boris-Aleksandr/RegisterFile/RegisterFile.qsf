@@ -63,7 +63,9 @@ set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH Tb_RegesterFile
 set_global_assignment -name EDA_TEST_BENCH_NAME Tb_RegesterFile -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id Tb_RegesterFile
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME Tb_RegesterFile -section_id Tb_RegesterFile
-set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/Tb_RegesterFile.vhd -section_id Tb_RegesterFile
 set_global_assignment -name VHDL_FILE simulation/modelsim/Tb_RegesterFile.vhd
 set_global_assignment -name SDC_FILE RegisterFile.out.sdc
 set_global_assignment -name VHDL_FILE RegisterFile.vhd
+set_global_assignment -name VHDL_FILE Tester_RegisterFile.vhd
+set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/Tb_RegesterFile.vhd -section_id Tb_RegesterFile
+set_global_assignment -name EDA_TEST_BENCH_FILE Tester_RegisterFile.vhd -section_id Tb_RegesterFile

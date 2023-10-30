@@ -1,7 +1,9 @@
 LIBRARY ieee;
-
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
+
+use work.Tester_RegisterFile;
+use work.RegisterFile;
 
 ENTITY Tb_RegesterFile IS
 END Tb_RegesterFile;
@@ -9,17 +11,18 @@ END Tb_RegesterFile;
 ARCHITECTURE behavior OF Tb_RegesterFile IS
 
 	constant reg_width : integer := 32;
-	constant num_reg : integer := 5;
+	constant lnum_reg : integer := 5;
 	
-	constant period : time := 10 ns;
+--	constant period : time := 10 ns;
 
 	--Inputs
-   signal tb_clk : std_logic := '1'; -- Сигнал тактирования
-   signal tb_reset : std_logic := '0'; -- Сигнал сброса
-	signal tb_ReadRegister : std_logic_vector(num_reg-1 downto 0) := (others => '0');
-	signal tb_WriteRegister : std_logic_vector(num_reg-1 downto 0) := (others => '0');
-	signal tb_WriteData : std_logic_vector(reg_width-1 downto 0) := (others => '0');
-	signal tb_RegWrite : std_logic := '0';
+   signal tb_clk : std_logic; -- Tactation singal
+   signal tb_reset : std_logic; -- Reset signal
+	signal tb_ReadRegister : std_logic_vector(lnum_reg-1 downto 0);
+	signal tb_WriteRegister : std_logic_vector(lnum_reg-1 downto 0);
+	signal tb_WriteData : std_logic_vector(reg_width-1 downto 0);
+	signal tb_EnableWrite : std_logic;
+	signal tb_EnableRead : std_logic;
 
 	--Outputs
 
@@ -28,77 +31,91 @@ ARCHITECTURE behavior OF Tb_RegesterFile IS
 	signal tb_AccumulatorRegister: std_logic_vector (31 downto 0);
 	signal tb_BaseRegister: std_logic_vector (4 downto 0);
 	signal tb_DataRegister: std_logic_vector (31 downto 16);
+	
+	
+	COMPONENT RegisterFile 
+	Generic (
+		reg_width : integer := 32; -- Register tire width
+		lnum_reg : integer := 5    -- Addres tire width
+	);
+	Port ( 
+			clk : in std_logic; -- Tactation signal
+         reset : in std_logic; -- Reset signal
+			ReadRegister : in STD_LOGIC_VECTOR (lnum_reg-1 downto 0);
+			WriteRegister : in STD_LOGIC_VECTOR (lnum_reg-1 downto 0);
+			WriteData : in STD_LOGIC_VECTOR (reg_width-1 downto 0);
+			EnableWrite : in STD_LOGIC;
+			EnableRead : in STD_LOGIC;
+			ReadData : out STD_LOGIC_VECTOR (reg_width-1 downto 0);
+			TimerCountRegister: out STD_LOGIC_VECTOR(25 downto 13);
+			AccumulatorRegister: out STD_LOGIC_VECTOR(31 downto 0);
+			BaseRegister: out STD_LOGIC_VECTOR(4 downto 0);
+			DataRegister: out STD_LOGIC_VECTOR(31 downto 16)
+			);
+	END COMPONENT;
+	
+	
+	COMPONENT Tester_RegisterFile 
+   Generic (
+		reg_width : integer := 32; -- Register tire width
+		lnum_reg : integer := 5    -- Addres tire width
+   );
+   Port ( 
+			clk : out std_logic; -- Tactation signal
+         reset : out std_logic; -- Reset signal
+			ReadRegister : out STD_LOGIC_VECTOR (lnum_reg-1 downto 0);
+			WriteRegister : out STD_LOGIC_VECTOR (lnum_reg-1 downto 0);
+			WriteData : out STD_LOGIC_VECTOR (reg_width-1 downto 0);
+			EnableWrite : out STD_LOGIC;
+			EnableRead : out STD_LOGIC
+--			ReadData : in STD_LOGIC_VECTOR (reg_width-1 downto 0);
+--			TimerCountRegister: in STD_LOGIC_VECTOR(25 downto 13);
+--			AccumulatorRegister: in STD_LOGIC_VECTOR(31 downto 0);
+--			BaseRegister: in STD_LOGIC_VECTOR(4 downto 0);
+--			DataRegister: in STD_LOGIC_VECTOR(31 downto 16)
+			);
+	 END COMPONENT;
 
+	
+	--FOR ALL : RegisterFile USE ENTITY work.RegisterFile.RegisterFile;
+   --FOR ALL : Tester USE ENTITY work.RegisterFile.Tester;
+	
+	
 BEGIN
 
---------------------------------образ тестируемого устройства----------------------------------
+--------------------------------Testing device image----------------------------------
 
-	Ul_Reg: entity work.RegisterFile (Behavioral)
+	U1_Reg: entity work.RegisterFile 
 		PORT MAP (
 		   clk => tb_clk,
 		   reset => tb_reset,
 			ReadRegister => tb_ReadRegister,
 			WriteRegister => tb_WriteRegister,
 			WriteData => tb_WriteData,
-			RegWrite => tb_RegWrite,
+			EnableWrite => tb_EnableWrite,
+			EnableRead => tb_EnableRead,
 			ReadData => tb_ReadData,
 			TimerCountRegister => tb_TimerCountRegister,
 			AccumulatorRegister => tb_AccumulatorRegister,
 			BaseRegister => tb_BaseRegister,
 			DataRegister => tb_DataRegister
 		);
-		
+	U2_Reg: entity work.Tester_RegisterFile
+		PORT MAP (
+		   clk => tb_clk,
+		   reset => tb_reset,
+			ReadRegister => tb_ReadRegister,
+			WriteRegister => tb_WriteRegister,
+			WriteData => tb_WriteData,
+			EnableWrite => tb_EnableWrite,
+			EnableRead => tb_EnableRead
+--			ReadData => tb_ReadData,
+--			TimerCountRegister => tb_TimerCountRegister,
+--			AccumulatorRegister => tb_AccumulatorRegister,
+--			BaseRegister => tb_BaseRegister,
+--			DataRegister => tb_DataRegister
+		);		
 -----------------------------------------------------------------------------------------------		
 
----------------------------------Настройка тактового сигнала-----------------------------------
-	
-	clock_gen: process
-	begin
-		loop                --// начало беcконечного цикла 
-			tb_clk <= not tb_clk;       --// инверсия тактирования
-			wait for period/2;  --// ожидание времени
-		end loop;           --// конец беcконечного цикла
-	end process;
-		 
-    --тесты
-	stim_proc: process
-	begin
 
------------------------------------------------------------------------------------------------
-	
----------------------------------Тест чтение регистров-----------------------------------------
-		
---		for I in 0 to 31 loop
---			tb_ReadRegister <= std_logic_vector(to_unsigned(I,5));
---			wait for 25 ns;
---		end loop;
-		
------------------------------------------------------------------------------------------------
-		
----------------------------------Тест запись в регистр-----------------------------------------
-		
-		tb_WriteRegister <= "01000"; -- 8
-		tb_WriteData <= x"a5a5a5a5";
-		wait for 50 ns;
-
-
-		tb_RegWrite <= '1';
-		wait for 10 ns;
-
-		tb_RegWrite <= '0';
-		wait for 15 ns;
-		
-		tb_reset <= '1';
-		wait for 10 ns;
-		
-		tb_reset <= '0';
-		wait for 10 ns;		
-
------------------------------------------------------------------------------------------------
-
-		assert false
-			report "End"
-			severity failure;
-			
-	end process;
-end;
+end; 
