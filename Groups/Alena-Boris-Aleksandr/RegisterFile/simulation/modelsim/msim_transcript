@@ -788,3 +788,5 @@ run
 # ** Failure: End
 #    Time: 157500 ps  Iteration: 0  Process: /tb_regesterfile/U2_Reg/stim_proc File: C:/Users/Alexandr/Desktop/Repository/Circuitry-of-digital-devices/Groups/Alena-Boris-Aleksandr/RegisterFile/Tester_RegisterFile.vhd
 # Break in Process stim_proc at C:/Users/Alexandr/Desktop/Repository/Circuitry-of-digital-devices/Groups/Alena-Boris-Aleksandr/RegisterFile/Tester_RegisterFile.vhd line 96
+# End time: 14:01:24 on Oct 30,2023, Elapsed time: 0:04:04
+# Errors: 1, Warnings: 0
