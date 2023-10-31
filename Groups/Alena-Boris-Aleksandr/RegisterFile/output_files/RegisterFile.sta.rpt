@@ -1,5 +1,5 @@
 Timing Analyzer report for RegisterFile
-Mon Oct 30 13:56:55 2023
+Tue Oct 31 22:13:31 2023
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -88,7 +88,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------+--------------------------+
 ; SDC File Path        ; Status ; Read at                  ;
 +----------------------+--------+--------------------------+
-; RegisterFile.out.sdc ; OK     ; Mon Oct 30 13:56:55 2023 ;
+; RegisterFile.out.sdc ; OK     ; Tue Oct 31 22:13:31 2023 ;
 +----------------------+--------+--------------------------+
 
 
@@ -106,7 +106,7 @@ https://fpgasoftware.intel.com/eula.
 +-----------+-----------------+------------+------+
 ; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
 +-----------+-----------------+------------+------+
-; 71.58 MHz ; 71.58 MHz       ; clk        ;      ;
+; 67.73 MHz ; 67.73 MHz       ; clk        ;      ;
 +-----------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -116,7 +116,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+--------+---------------+
 ; Clock ; Slack  ; End Point TNS ;
 +-------+--------+---------------+
-; clk   ; 11.030 ; 0.000         ;
+; clk   ; 10.236 ; 0.000         ;
 +-------+--------+---------------+
 
 
@@ -150,220 +150,220 @@ No paths to report.
 +-------+--------+---------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Setup: 'clk'                                                                                                         ;
-+--------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node         ; To Node           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
-; 11.030 ; array_reg[21][24] ; ReadData[24]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 13.637     ;
-; 11.217 ; array_reg[16][26] ; ReadData[26]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 13.450     ;
-; 11.252 ; array_reg[2][17]  ; ReadData[17]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 13.415     ;
-; 11.403 ; array_reg[16][23] ; ReadData[23]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 13.264     ;
-; 11.557 ; array_reg[22][23] ; ReadData[23]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 13.110     ;
-; 11.601 ; array_reg[22][15] ; ReadData[15]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 13.066     ;
-; 11.608 ; array_reg[2][27]  ; ReadData[27]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 13.059     ;
-; 11.702 ; array_reg[18][15] ; ReadData[15]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 12.965     ;
-; 11.715 ; array_reg[0][17]  ; ReadData[17]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 12.952     ;
-; 11.779 ; array_reg[17][24] ; ReadData[24]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 12.888     ;
-; 11.802 ; array_reg[26][12] ; ReadData[12]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 12.865     ;
-; 11.868 ; array_reg[1][2]   ; ReadData[2]~reg0  ; clk          ; clk         ; 25.000       ; 0.000      ; 12.799     ;
-; 12.051 ; array_reg[1][4]   ; ReadData[4]~reg0  ; clk          ; clk         ; 25.000       ; 0.000      ; 12.616     ;
-; 12.162 ; array_reg[5][17]  ; ReadData[17]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 12.505     ;
-; 12.178 ; array_reg[0][27]  ; ReadData[27]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 12.489     ;
-; 12.205 ; array_reg[4][14]  ; ReadData[14]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 12.462     ;
-; 12.332 ; array_reg[6][16]  ; ReadData[16]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 12.335     ;
-; 12.347 ; array_reg[18][12] ; ReadData[12]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 12.320     ;
-; 12.366 ; array_reg[6][14]  ; ReadData[14]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 12.301     ;
-; 12.443 ; array_reg[27][31] ; ReadData[31]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 12.224     ;
-; 12.509 ; array_reg[24][26] ; ReadData[26]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 12.158     ;
-; 12.539 ; array_reg[16][18] ; ReadData[18]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 12.128     ;
-; 12.588 ; array_reg[4][16]  ; ReadData[16]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 12.079     ;
-; 12.633 ; array_reg[1][14]  ; ReadData[14]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 12.034     ;
-; 12.671 ; array_reg[26][26] ; ReadData[26]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.996     ;
-; 12.703 ; array_reg[4][17]  ; ReadData[17]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.964     ;
-; 12.710 ; array_reg[16][15] ; ReadData[15]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.957     ;
-; 12.723 ; array_reg[19][12] ; ReadData[12]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.944     ;
-; 12.733 ; array_reg[19][18] ; ReadData[18]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.934     ;
-; 12.781 ; array_reg[18][20] ; ReadData[20]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.886     ;
-; 12.788 ; array_reg[20][13] ; ReadData[13]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.879     ;
-; 12.822 ; array_reg[23][24] ; ReadData[24]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.845     ;
-; 12.830 ; array_reg[22][9]  ; ReadData[9]~reg0  ; clk          ; clk         ; 25.000       ; 0.000      ; 11.837     ;
-; 12.874 ; array_reg[9][28]  ; ReadData[28]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.793     ;
-; 12.893 ; array_reg[2][7]   ; ReadData[7]~reg0  ; clk          ; clk         ; 25.000       ; 0.000      ; 11.774     ;
-; 12.910 ; array_reg[6][10]  ; ReadData[10]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.757     ;
-; 12.915 ; array_reg[24][18] ; ReadData[18]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.752     ;
-; 12.947 ; array_reg[7][14]  ; ReadData[14]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.720     ;
-; 12.962 ; array_reg[20][22] ; ReadData[22]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.705     ;
-; 12.963 ; array_reg[1][10]  ; ReadData[10]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.704     ;
-; 12.966 ; array_reg[12][17] ; ReadData[17]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.701     ;
-; 12.980 ; array_reg[18][24] ; ReadData[24]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.687     ;
-; 12.995 ; array_reg[22][3]  ; ReadData[3]~reg0  ; clk          ; clk         ; 25.000       ; 0.000      ; 11.672     ;
-; 13.004 ; array_reg[18][8]  ; ReadData[8]~reg0  ; clk          ; clk         ; 25.000       ; 0.000      ; 11.663     ;
-; 13.012 ; array_reg[0][7]   ; ReadData[7]~reg0  ; clk          ; clk         ; 25.000       ; 0.000      ; 11.655     ;
-; 13.022 ; array_reg[14][0]  ; ReadData[0]~reg0  ; clk          ; clk         ; 25.000       ; 0.000      ; 11.645     ;
-; 13.036 ; array_reg[16][13] ; ReadData[13]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.631     ;
-; 13.045 ; array_reg[17][15] ; ReadData[15]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.622     ;
-; 13.058 ; array_reg[0][14]  ; ReadData[14]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.609     ;
-; 13.067 ; array_reg[16][19] ; ReadData[19]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.600     ;
-; 13.080 ; array_reg[4][10]  ; ReadData[10]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.587     ;
-; 13.101 ; array_reg[0][2]   ; ReadData[2]~reg0  ; clk          ; clk         ; 25.000       ; 0.000      ; 11.566     ;
-; 13.110 ; array_reg[3][6]   ; ReadData[6]~reg0  ; clk          ; clk         ; 25.000       ; 0.000      ; 11.557     ;
-; 13.119 ; array_reg[12][10] ; ReadData[10]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.548     ;
-; 13.131 ; array_reg[20][15] ; ReadData[15]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.536     ;
-; 13.176 ; array_reg[10][17] ; ReadData[17]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.491     ;
-; 13.182 ; array_reg[18][23] ; ReadData[23]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.485     ;
-; 13.210 ; array_reg[17][12] ; ReadData[12]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.457     ;
-; 13.210 ; array_reg[2][2]   ; ReadData[2]~reg0  ; clk          ; clk         ; 25.000       ; 0.000      ; 11.457     ;
-; 13.212 ; array_reg[30][15] ; ReadData[15]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.455     ;
-; 13.216 ; array_reg[8][25]  ; ReadData[25]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.451     ;
-; 13.262 ; array_reg[0][21]  ; ReadData[21]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.405     ;
-; 13.272 ; array_reg[14][10] ; ReadData[10]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.395     ;
-; 13.299 ; array_reg[0][4]   ; ReadData[4]~reg0  ; clk          ; clk         ; 25.000       ; 0.000      ; 11.368     ;
-; 13.301 ; array_reg[20][23] ; ReadData[23]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.366     ;
-; 13.303 ; array_reg[26][20] ; ReadData[20]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.364     ;
-; 13.304 ; array_reg[0][19]  ; ReadData[19]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.363     ;
-; 13.310 ; array_reg[13][17] ; ReadData[17]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.357     ;
-; 13.319 ; array_reg[17][23] ; ReadData[23]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.348     ;
-; 13.320 ; array_reg[8][4]   ; ReadData[4]~reg0  ; clk          ; clk         ; 25.000       ; 0.000      ; 11.347     ;
-; 13.350 ; array_reg[17][21] ; ReadData[21]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.317     ;
-; 13.350 ; array_reg[18][3]  ; ReadData[3]~reg0  ; clk          ; clk         ; 25.000       ; 0.000      ; 11.317     ;
-; 13.354 ; array_reg[16][22] ; ReadData[22]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.313     ;
-; 13.357 ; array_reg[16][8]  ; ReadData[8]~reg0  ; clk          ; clk         ; 25.000       ; 0.000      ; 11.310     ;
-; 13.360 ; array_reg[26][15] ; ReadData[15]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.307     ;
-; 13.361 ; array_reg[3][2]   ; ReadData[2]~reg0  ; clk          ; clk         ; 25.000       ; 0.000      ; 11.306     ;
-; 13.363 ; array_reg[26][8]  ; ReadData[8]~reg0  ; clk          ; clk         ; 25.000       ; 0.000      ; 11.304     ;
-; 13.370 ; array_reg[18][26] ; ReadData[26]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.297     ;
-; 13.378 ; array_reg[22][21] ; ReadData[21]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.289     ;
-; 13.384 ; array_reg[9][17]  ; ReadData[17]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.283     ;
-; 13.400 ; array_reg[16][16] ; ReadData[16]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.267     ;
-; 13.400 ; array_reg[2][25]  ; ReadData[25]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.267     ;
-; 13.405 ; array_reg[30][9]  ; ReadData[9]~reg0  ; clk          ; clk         ; 25.000       ; 0.000      ; 11.262     ;
-; 13.406 ; array_reg[25][15] ; ReadData[15]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.261     ;
-; 13.419 ; array_reg[23][18] ; ReadData[18]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.248     ;
-; 13.447 ; array_reg[19][20] ; ReadData[20]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.220     ;
-; 13.461 ; array_reg[12][25] ; ReadData[25]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.206     ;
-; 13.466 ; array_reg[0][10]  ; ReadData[10]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.201     ;
-; 13.466 ; array_reg[24][19] ; ReadData[19]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.201     ;
-; 13.468 ; array_reg[3][14]  ; ReadData[14]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.199     ;
-; 13.486 ; array_reg[1][12]  ; ReadData[12]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.181     ;
-; 13.490 ; array_reg[20][18] ; ReadData[18]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.177     ;
-; 13.501 ; array_reg[27][23] ; ReadData[23]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.166     ;
-; 13.502 ; array_reg[2][5]   ; ReadData[5]~reg0  ; clk          ; clk         ; 25.000       ; 0.000      ; 11.165     ;
-; 13.515 ; array_reg[23][12] ; ReadData[12]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.152     ;
-; 13.522 ; array_reg[3][7]   ; ReadData[7]~reg0  ; clk          ; clk         ; 25.000       ; 0.000      ; 11.145     ;
-; 13.524 ; array_reg[1][26]  ; ReadData[26]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.143     ;
-; 13.554 ; array_reg[4][4]   ; ReadData[4]~reg0  ; clk          ; clk         ; 25.000       ; 0.000      ; 11.113     ;
-; 13.566 ; array_reg[8][28]  ; ReadData[28]~reg0 ; clk          ; clk         ; 25.000       ; 0.000      ; 11.101     ;
-; 13.572 ; array_reg[17][1]  ; ReadData[1]~reg0  ; clk          ; clk         ; 25.000       ; 0.000      ; 11.095     ;
-+--------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
++-------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk'                                                                                                      ;
++--------+-------------------+----------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+----------------+--------------+-------------+--------------+------------+------------+
+; 10.236 ; array_reg[0][15]  ; ReadData_r[15] ; clk          ; clk         ; 25.000       ; 0.000      ; 14.431     ;
+; 10.586 ; array_reg[10][15] ; ReadData_r[15] ; clk          ; clk         ; 25.000       ; 0.000      ; 14.081     ;
+; 10.761 ; array_reg[0][24]  ; ReadData_r[24] ; clk          ; clk         ; 25.000       ; 0.000      ; 13.906     ;
+; 10.775 ; array_reg[2][15]  ; ReadData_r[15] ; clk          ; clk         ; 25.000       ; 0.000      ; 13.892     ;
+; 10.911 ; array_reg[8][15]  ; ReadData_r[15] ; clk          ; clk         ; 25.000       ; 0.000      ; 13.756     ;
+; 11.021 ; array_reg[0][7]   ; ReadData_r[7]  ; clk          ; clk         ; 25.000       ; 0.000      ; 13.646     ;
+; 11.066 ; array_reg[1][26]  ; ReadData_r[26] ; clk          ; clk         ; 25.000       ; 0.000      ; 13.601     ;
+; 11.292 ; array_reg[0][22]  ; ReadData_r[22] ; clk          ; clk         ; 25.000       ; 0.000      ; 13.375     ;
+; 11.344 ; array_reg[2][1]   ; ReadData_r[1]  ; clk          ; clk         ; 25.000       ; 0.000      ; 13.323     ;
+; 11.344 ; array_reg[8][23]  ; ReadData_r[23] ; clk          ; clk         ; 25.000       ; 0.000      ; 13.323     ;
+; 11.467 ; array_reg[1][0]   ; ReadData_r[0]  ; clk          ; clk         ; 25.000       ; 0.000      ; 13.200     ;
+; 11.557 ; array_reg[0][20]  ; ReadData_r[20] ; clk          ; clk         ; 25.000       ; 0.000      ; 13.110     ;
+; 11.567 ; array_reg[0][5]   ; ReadData_r[5]  ; clk          ; clk         ; 25.000       ; 0.000      ; 13.100     ;
+; 11.608 ; array_reg[0][1]   ; ReadData_r[1]  ; clk          ; clk         ; 25.000       ; 0.000      ; 13.059     ;
+; 11.635 ; array_reg[21][14] ; ReadData_r[14] ; clk          ; clk         ; 25.000       ; 0.000      ; 13.032     ;
+; 11.663 ; array_reg[8][29]  ; ReadData_r[29] ; clk          ; clk         ; 25.000       ; 0.000      ; 13.004     ;
+; 11.683 ; array_reg[23][4]  ; ReadData_r[4]  ; clk          ; clk         ; 25.000       ; 0.000      ; 12.984     ;
+; 11.737 ; array_reg[0][0]   ; ReadData_r[0]  ; clk          ; clk         ; 25.000       ; 0.000      ; 12.930     ;
+; 11.826 ; array_reg[10][29] ; ReadData_r[29] ; clk          ; clk         ; 25.000       ; 0.000      ; 12.841     ;
+; 11.835 ; array_reg[16][31] ; ReadData_r[31] ; clk          ; clk         ; 25.000       ; 0.000      ; 12.832     ;
+; 11.859 ; array_reg[10][1]  ; ReadData_r[1]  ; clk          ; clk         ; 25.000       ; 0.000      ; 12.808     ;
+; 11.867 ; array_reg[29][14] ; ReadData_r[14] ; clk          ; clk         ; 25.000       ; 0.000      ; 12.800     ;
+; 11.893 ; array_reg[8][21]  ; ReadData_r[21] ; clk          ; clk         ; 25.000       ; 0.000      ; 12.774     ;
+; 11.911 ; array_reg[24][16] ; ReadData_r[16] ; clk          ; clk         ; 25.000       ; 0.000      ; 12.756     ;
+; 11.981 ; array_reg[3][15]  ; ReadData_r[15] ; clk          ; clk         ; 25.000       ; 0.000      ; 12.686     ;
+; 11.986 ; array_reg[0][21]  ; ReadData_r[21] ; clk          ; clk         ; 25.000       ; 0.000      ; 12.681     ;
+; 12.047 ; array_reg[8][1]   ; ReadData_r[1]  ; clk          ; clk         ; 25.000       ; 0.000      ; 12.620     ;
+; 12.058 ; array_reg[2][5]   ; ReadData_r[5]  ; clk          ; clk         ; 25.000       ; 0.000      ; 12.609     ;
+; 12.059 ; array_reg[17][14] ; ReadData_r[14] ; clk          ; clk         ; 25.000       ; 0.000      ; 12.608     ;
+; 12.181 ; array_reg[16][19] ; ReadData_r[19] ; clk          ; clk         ; 25.000       ; 0.000      ; 12.486     ;
+; 12.181 ; array_reg[1][24]  ; ReadData_r[24] ; clk          ; clk         ; 25.000       ; 0.000      ; 12.486     ;
+; 12.201 ; array_reg[22][31] ; ReadData_r[31] ; clk          ; clk         ; 25.000       ; 0.000      ; 12.466     ;
+; 12.212 ; array_reg[1][8]   ; ReadData_r[8]  ; clk          ; clk         ; 25.000       ; 0.000      ; 12.455     ;
+; 12.222 ; array_reg[1][22]  ; ReadData_r[22] ; clk          ; clk         ; 25.000       ; 0.000      ; 12.445     ;
+; 12.242 ; array_reg[8][31]  ; ReadData_r[31] ; clk          ; clk         ; 25.000       ; 0.000      ; 12.425     ;
+; 12.246 ; array_reg[0][9]   ; ReadData_r[9]  ; clk          ; clk         ; 25.000       ; 0.000      ; 12.421     ;
+; 12.313 ; array_reg[0][27]  ; ReadData_r[27] ; clk          ; clk         ; 25.000       ; 0.000      ; 12.354     ;
+; 12.351 ; array_reg[16][29] ; ReadData_r[29] ; clk          ; clk         ; 25.000       ; 0.000      ; 12.316     ;
+; 12.383 ; array_reg[19][4]  ; ReadData_r[4]  ; clk          ; clk         ; 25.000       ; 0.000      ; 12.284     ;
+; 12.386 ; array_reg[14][12] ; ReadData_r[12] ; clk          ; clk         ; 25.000       ; 0.000      ; 12.281     ;
+; 12.406 ; array_reg[2][9]   ; ReadData_r[9]  ; clk          ; clk         ; 25.000       ; 0.000      ; 12.261     ;
+; 12.439 ; array_reg[10][31] ; ReadData_r[31] ; clk          ; clk         ; 25.000       ; 0.000      ; 12.228     ;
+; 12.445 ; array_reg[16][16] ; ReadData_r[16] ; clk          ; clk         ; 25.000       ; 0.000      ; 12.222     ;
+; 12.501 ; array_reg[4][4]   ; ReadData_r[4]  ; clk          ; clk         ; 25.000       ; 0.000      ; 12.166     ;
+; 12.506 ; array_reg[2][21]  ; ReadData_r[21] ; clk          ; clk         ; 25.000       ; 0.000      ; 12.161     ;
+; 12.530 ; array_reg[20][31] ; ReadData_r[31] ; clk          ; clk         ; 25.000       ; 0.000      ; 12.137     ;
+; 12.545 ; array_reg[12][12] ; ReadData_r[12] ; clk          ; clk         ; 25.000       ; 0.000      ; 12.122     ;
+; 12.561 ; array_reg[1][15]  ; ReadData_r[15] ; clk          ; clk         ; 25.000       ; 0.000      ; 12.106     ;
+; 12.562 ; array_reg[13][1]  ; ReadData_r[1]  ; clk          ; clk         ; 25.000       ; 0.000      ; 12.105     ;
+; 12.580 ; array_reg[1][20]  ; ReadData_r[20] ; clk          ; clk         ; 25.000       ; 0.000      ; 12.087     ;
+; 12.583 ; array_reg[2][7]   ; ReadData_r[7]  ; clk          ; clk         ; 25.000       ; 0.000      ; 12.084     ;
+; 12.589 ; array_reg[18][19] ; ReadData_r[19] ; clk          ; clk         ; 25.000       ; 0.000      ; 12.078     ;
+; 12.602 ; array_reg[26][14] ; ReadData_r[14] ; clk          ; clk         ; 25.000       ; 0.000      ; 12.065     ;
+; 12.631 ; array_reg[0][25]  ; ReadData_r[25] ; clk          ; clk         ; 25.000       ; 0.000      ; 12.036     ;
+; 12.640 ; array_reg[18][5]  ; ReadData_r[5]  ; clk          ; clk         ; 25.000       ; 0.000      ; 12.027     ;
+; 12.640 ; array_reg[6][4]   ; ReadData_r[4]  ; clk          ; clk         ; 25.000       ; 0.000      ; 12.027     ;
+; 12.671 ; array_reg[1][25]  ; ReadData_r[25] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.996     ;
+; 12.689 ; array_reg[12][25] ; ReadData_r[25] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.978     ;
+; 12.693 ; array_reg[2][31]  ; ReadData_r[31] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.974     ;
+; 12.717 ; array_reg[20][19] ; ReadData_r[19] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.950     ;
+; 12.723 ; array_reg[0][26]  ; ReadData_r[26] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.944     ;
+; 12.726 ; array_reg[0][12]  ; ReadData_r[12] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.941     ;
+; 12.744 ; array_reg[18][31] ; ReadData_r[31] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.923     ;
+; 12.756 ; array_reg[0][10]  ; ReadData_r[10] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.911     ;
+; 12.758 ; array_reg[0][8]   ; ReadData_r[8]  ; clk          ; clk         ; 25.000       ; 0.000      ; 11.909     ;
+; 12.766 ; array_reg[5][15]  ; ReadData_r[15] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.901     ;
+; 12.768 ; array_reg[4][12]  ; ReadData_r[12] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.899     ;
+; 12.782 ; array_reg[14][1]  ; ReadData_r[1]  ; clk          ; clk         ; 25.000       ; 0.000      ; 11.885     ;
+; 12.814 ; array_reg[10][21] ; ReadData_r[21] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.853     ;
+; 12.817 ; array_reg[23][14] ; ReadData_r[14] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.850     ;
+; 12.857 ; array_reg[4][26]  ; ReadData_r[26] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.810     ;
+; 12.862 ; array_reg[13][23] ; ReadData_r[23] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.805     ;
+; 12.865 ; array_reg[10][3]  ; ReadData_r[3]  ; clk          ; clk         ; 25.000       ; 0.000      ; 11.802     ;
+; 12.865 ; array_reg[8][25]  ; ReadData_r[25] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.802     ;
+; 12.894 ; array_reg[9][15]  ; ReadData_r[15] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.773     ;
+; 12.944 ; array_reg[22][11] ; ReadData_r[11] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.723     ;
+; 12.948 ; array_reg[18][11] ; ReadData_r[11] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.719     ;
+; 12.953 ; array_reg[6][12]  ; ReadData_r[12] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.714     ;
+; 12.983 ; array_reg[22][5]  ; ReadData_r[5]  ; clk          ; clk         ; 25.000       ; 0.000      ; 11.684     ;
+; 13.008 ; array_reg[0][29]  ; ReadData_r[29] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.659     ;
+; 13.026 ; array_reg[1][1]   ; ReadData_r[1]  ; clk          ; clk         ; 25.000       ; 0.000      ; 11.641     ;
+; 13.031 ; array_reg[3][22]  ; ReadData_r[22] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.636     ;
+; 13.038 ; array_reg[10][25] ; ReadData_r[25] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.629     ;
+; 13.068 ; array_reg[1][9]   ; ReadData_r[9]  ; clk          ; clk         ; 25.000       ; 0.000      ; 11.599     ;
+; 13.070 ; array_reg[20][14] ; ReadData_r[14] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.597     ;
+; 13.080 ; array_reg[12][1]  ; ReadData_r[1]  ; clk          ; clk         ; 25.000       ; 0.000      ; 11.587     ;
+; 13.095 ; array_reg[0][18]  ; ReadData_r[18] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.572     ;
+; 13.104 ; array_reg[0][19]  ; ReadData_r[19] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.563     ;
+; 13.109 ; array_reg[24][19] ; ReadData_r[19] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.558     ;
+; 13.111 ; array_reg[0][17]  ; ReadData_r[17] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.556     ;
+; 13.119 ; array_reg[4][15]  ; ReadData_r[15] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.548     ;
+; 13.129 ; array_reg[26][5]  ; ReadData_r[5]  ; clk          ; clk         ; 25.000       ; 0.000      ; 11.538     ;
+; 13.135 ; array_reg[18][14] ; ReadData_r[14] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.532     ;
+; 13.140 ; array_reg[12][18] ; ReadData_r[18] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.527     ;
+; 13.158 ; array_reg[20][5]  ; ReadData_r[5]  ; clk          ; clk         ; 25.000       ; 0.000      ; 11.509     ;
+; 13.167 ; array_reg[21][28] ; ReadData_r[28] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.500     ;
+; 13.174 ; array_reg[4][17]  ; ReadData_r[17] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.493     ;
+; 13.176 ; array_reg[1][12]  ; ReadData_r[12] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.491     ;
+; 13.190 ; array_reg[12][22] ; ReadData_r[22] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.477     ;
+; 13.223 ; array_reg[13][25] ; ReadData_r[25] ; clk          ; clk         ; 25.000       ; 0.000      ; 11.444     ;
++--------+-------------------+----------------+--------------+-------------+--------------+------------+------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------+
-; Hold: 'clk'                                                                                                                    ;
-+-------+-------------------+------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node         ; To Node                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-------------------+------------------------------+--------------+-------------+--------------+------------+------------+
-; 1.640 ; array_reg[3][23]  ; TimerCountRegister[23]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.861      ;
-; 1.641 ; array_reg[2][0]   ; BaseRegister[0]~reg0         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.862      ;
-; 1.641 ; array_reg[1][25]  ; DataRegister[25]~reg0        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.862      ;
-; 1.642 ; array_reg[3][15]  ; TimerCountRegister[15]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.863      ;
-; 1.642 ; array_reg[3][20]  ; TimerCountRegister[20]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.863      ;
-; 1.642 ; array_reg[0][21]  ; AccumulatorRegister[21]~reg0 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.863      ;
-; 1.643 ; array_reg[0][15]  ; AccumulatorRegister[15]~reg0 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.864      ;
-; 1.644 ; array_reg[0][24]  ; AccumulatorRegister[24]~reg0 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.865      ;
-; 1.644 ; array_reg[1][23]  ; DataRegister[23]~reg0        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.865      ;
-; 1.645 ; array_reg[3][21]  ; TimerCountRegister[21]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.866      ;
-; 1.645 ; array_reg[0][16]  ; AccumulatorRegister[16]~reg0 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.866      ;
-; 1.650 ; array_reg[1][21]  ; DataRegister[21]~reg0        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.871      ;
-; 1.650 ; array_reg[1][26]  ; DataRegister[26]~reg0        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.871      ;
-; 1.654 ; array_reg[0][20]  ; AccumulatorRegister[20]~reg0 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.875      ;
-; 1.657 ; array_reg[1][24]  ; DataRegister[24]~reg0        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.878      ;
-; 1.661 ; array_reg[0][12]  ; AccumulatorRegister[12]~reg0 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.882      ;
-; 1.664 ; array_reg[0][3]   ; AccumulatorRegister[3]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.885      ;
-; 1.667 ; array_reg[0][22]  ; AccumulatorRegister[22]~reg0 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.888      ;
-; 1.670 ; array_reg[1][29]  ; DataRegister[29]~reg0        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.891      ;
-; 1.673 ; array_reg[0][14]  ; AccumulatorRegister[14]~reg0 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.894      ;
-; 1.689 ; array_reg[0][27]  ; AccumulatorRegister[27]~reg0 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.910      ;
-; 1.695 ; array_reg[0][4]   ; AccumulatorRegister[4]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.916      ;
-; 1.898 ; array_reg[3][16]  ; TimerCountRegister[16]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.119      ;
-; 1.898 ; array_reg[0][29]  ; AccumulatorRegister[29]~reg0 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.119      ;
-; 1.898 ; array_reg[1][18]  ; DataRegister[18]~reg0        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.119      ;
-; 1.900 ; array_reg[1][31]  ; DataRegister[31]~reg0        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.121      ;
-; 1.902 ; array_reg[0][18]  ; AccumulatorRegister[18]~reg0 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.123      ;
-; 1.902 ; array_reg[0][19]  ; AccumulatorRegister[19]~reg0 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.123      ;
-; 1.902 ; array_reg[1][20]  ; DataRegister[20]~reg0        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.123      ;
-; 1.902 ; array_reg[1][27]  ; DataRegister[27]~reg0        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.123      ;
-; 1.903 ; array_reg[1][16]  ; DataRegister[16]~reg0        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.124      ;
-; 1.904 ; array_reg[3][13]  ; TimerCountRegister[13]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.125      ;
-; 1.904 ; array_reg[3][18]  ; TimerCountRegister[18]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.125      ;
-; 1.904 ; array_reg[0][0]   ; AccumulatorRegister[0]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.125      ;
-; 1.904 ; array_reg[2][1]   ; BaseRegister[1]~reg0         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.125      ;
-; 1.905 ; array_reg[0][30]  ; AccumulatorRegister[30]~reg0 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.126      ;
-; 1.905 ; array_reg[1][30]  ; DataRegister[30]~reg0        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.126      ;
-; 1.908 ; array_reg[1][19]  ; DataRegister[19]~reg0        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.129      ;
-; 1.910 ; array_reg[3][24]  ; TimerCountRegister[24]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.131      ;
-; 1.910 ; array_reg[0][26]  ; AccumulatorRegister[26]~reg0 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.131      ;
-; 1.910 ; array_reg[1][22]  ; DataRegister[22]~reg0        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.131      ;
-; 1.911 ; array_reg[3][25]  ; TimerCountRegister[25]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.132      ;
-; 1.911 ; array_reg[0][25]  ; AccumulatorRegister[25]~reg0 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.132      ;
-; 1.920 ; array_reg[0][28]  ; AccumulatorRegister[28]~reg0 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.141      ;
-; 1.923 ; array_reg[0][2]   ; AccumulatorRegister[2]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.144      ;
-; 1.930 ; array_reg[0][1]   ; AccumulatorRegister[1]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.151      ;
-; 2.050 ; array_reg[0][8]   ; AccumulatorRegister[8]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.271      ;
-; 2.053 ; array_reg[0][31]  ; AccumulatorRegister[31]~reg0 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.274      ;
-; 2.068 ; array_reg[3][22]  ; TimerCountRegister[22]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.289      ;
-; 2.311 ; array_reg[0][23]  ; AccumulatorRegister[23]~reg0 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.532      ;
-; 2.352 ; array_reg[3][19]  ; TimerCountRegister[19]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.573      ;
-; 2.534 ; array_reg[2][4]   ; BaseRegister[4]~reg0         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.755      ;
-; 2.681 ; array_reg[0][7]   ; AccumulatorRegister[7]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.902      ;
-; 2.872 ; array_reg[0][6]   ; AccumulatorRegister[6]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.093      ;
-; 2.898 ; array_reg[1][17]  ; DataRegister[17]~reg0        ; clk          ; clk         ; 0.000        ; 0.000      ; 3.119      ;
-; 2.935 ; array_reg[0][11]  ; AccumulatorRegister[11]~reg0 ; clk          ; clk         ; 0.000        ; 0.000      ; 3.156      ;
-; 2.943 ; array_reg[3][14]  ; TimerCountRegister[14]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.164      ;
-; 3.193 ; array_reg[0][17]  ; AccumulatorRegister[17]~reg0 ; clk          ; clk         ; 0.000        ; 0.000      ; 3.414      ;
-; 3.487 ; array_reg[2][3]   ; BaseRegister[3]~reg0         ; clk          ; clk         ; 0.000        ; 0.000      ; 3.708      ;
-; 3.703 ; array_reg[0][9]   ; AccumulatorRegister[9]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.924      ;
-; 3.792 ; array_reg[3][17]  ; TimerCountRegister[17]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 4.013      ;
-; 3.923 ; array_reg[2][2]   ; BaseRegister[2]~reg0         ; clk          ; clk         ; 0.000        ; 0.000      ; 4.144      ;
-; 3.984 ; array_reg[0][5]   ; AccumulatorRegister[5]~reg0  ; clk          ; clk         ; 0.000        ; 0.000      ; 4.205      ;
-; 4.032 ; array_reg[31][17] ; ReadData[17]~reg0            ; clk          ; clk         ; 0.000        ; 0.000      ; 4.253      ;
-; 4.173 ; array_reg[11][22] ; ReadData[22]~reg0            ; clk          ; clk         ; 0.000        ; 0.000      ; 4.394      ;
-; 4.187 ; array_reg[23][17] ; ReadData[17]~reg0            ; clk          ; clk         ; 0.000        ; 0.000      ; 4.408      ;
-; 4.198 ; array_reg[27][10] ; ReadData[10]~reg0            ; clk          ; clk         ; 0.000        ; 0.000      ; 4.419      ;
-; 4.204 ; array_reg[15][5]  ; ReadData[5]~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 4.425      ;
-; 4.424 ; array_reg[0][13]  ; AccumulatorRegister[13]~reg0 ; clk          ; clk         ; 0.000        ; 0.000      ; 4.645      ;
-; 4.514 ; array_reg[31][0]  ; ReadData[0]~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 4.735      ;
-; 4.605 ; array_reg[30][10] ; ReadData[10]~reg0            ; clk          ; clk         ; 0.000        ; 0.000      ; 4.826      ;
-; 4.666 ; array_reg[15][18] ; ReadData[18]~reg0            ; clk          ; clk         ; 0.000        ; 0.000      ; 4.887      ;
-; 4.669 ; array_reg[30][6]  ; ReadData[6]~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 4.890      ;
-; 4.725 ; array_reg[7][21]  ; ReadData[21]~reg0            ; clk          ; clk         ; 0.000        ; 0.000      ; 4.946      ;
-; 4.752 ; array_reg[23][25] ; ReadData[25]~reg0            ; clk          ; clk         ; 0.000        ; 0.000      ; 4.973      ;
-; 4.803 ; array_reg[0][10]  ; AccumulatorRegister[10]~reg0 ; clk          ; clk         ; 0.000        ; 0.000      ; 5.024      ;
-; 4.821 ; array_reg[22][0]  ; ReadData[0]~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 5.042      ;
-; 4.846 ; array_reg[15][1]  ; ReadData[1]~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 5.067      ;
-; 4.861 ; array_reg[23][5]  ; ReadData[5]~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 5.082      ;
-; 4.881 ; array_reg[31][10] ; ReadData[10]~reg0            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.102      ;
-; 4.889 ; array_reg[3][30]  ; ReadData[30]~reg0            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.110      ;
-; 4.921 ; array_reg[15][21] ; ReadData[21]~reg0            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.142      ;
-; 5.046 ; array_reg[11][11] ; ReadData[11]~reg0            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.267      ;
-; 5.112 ; array_reg[9][11]  ; ReadData[11]~reg0            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.333      ;
-; 5.116 ; array_reg[14][5]  ; ReadData[5]~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 5.337      ;
-; 5.156 ; array_reg[21][17] ; ReadData[17]~reg0            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.377      ;
-; 5.172 ; array_reg[22][10] ; ReadData[10]~reg0            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.393      ;
-; 5.179 ; array_reg[10][22] ; ReadData[22]~reg0            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.400      ;
-; 5.217 ; array_reg[1][28]  ; DataRegister[28]~reg0        ; clk          ; clk         ; 0.000        ; 0.000      ; 5.438      ;
-; 5.226 ; array_reg[11][1]  ; ReadData[1]~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 5.447      ;
-; 5.251 ; array_reg[7][23]  ; ReadData[23]~reg0            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.472      ;
-; 5.316 ; array_reg[7][1]   ; ReadData[1]~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 5.537      ;
-; 5.348 ; array_reg[23][15] ; ReadData[15]~reg0            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.569      ;
-; 5.352 ; array_reg[22][6]  ; ReadData[6]~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 5.573      ;
-; 5.419 ; array_reg[10][8]  ; ReadData[8]~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 5.640      ;
-; 5.448 ; array_reg[31][5]  ; ReadData[5]~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 5.669      ;
-; 5.512 ; array_reg[27][17] ; ReadData[17]~reg0            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.733      ;
-; 5.516 ; array_reg[29][17] ; ReadData[17]~reg0            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.737      ;
-; 5.521 ; array_reg[20][0]  ; ReadData[0]~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 5.742      ;
-; 5.580 ; array_reg[2][30]  ; ReadData[30]~reg0            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.801      ;
-+-------+-------------------+------------------------------+--------------+-------------+--------------+------------+------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                                                 ;
++-------+-------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node         ; To Node                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; 1.640 ; array_reg[3][20]  ; TimerCountRegister_r[20]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.861      ;
+; 1.641 ; array_reg[0][23]  ; AccumulatorRegister_r[23] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.862      ;
+; 1.644 ; array_reg[0][19]  ; AccumulatorRegister_r[19] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.865      ;
+; 1.644 ; array_reg[0][22]  ; AccumulatorRegister_r[22] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.865      ;
+; 1.645 ; array_reg[0][11]  ; AccumulatorRegister_r[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.866      ;
+; 1.645 ; array_reg[0][18]  ; AccumulatorRegister_r[18] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.866      ;
+; 1.645 ; array_reg[1][25]  ; DataRegister_r[25]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.866      ;
+; 1.650 ; array_reg[1][27]  ; DataRegister_r[27]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.871      ;
+; 1.652 ; array_reg[0][13]  ; AccumulatorRegister_r[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.873      ;
+; 1.653 ; array_reg[0][17]  ; AccumulatorRegister_r[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.874      ;
+; 1.654 ; array_reg[0][6]   ; AccumulatorRegister_r[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.875      ;
+; 1.659 ; array_reg[0][2]   ; AccumulatorRegister_r[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.880      ;
+; 1.659 ; array_reg[0][29]  ; AccumulatorRegister_r[29] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.880      ;
+; 1.662 ; array_reg[1][24]  ; DataRegister_r[24]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.883      ;
+; 1.664 ; array_reg[0][8]   ; AccumulatorRegister_r[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.885      ;
+; 1.665 ; array_reg[0][30]  ; AccumulatorRegister_r[30] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.886      ;
+; 1.666 ; array_reg[0][26]  ; AccumulatorRegister_r[26] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.887      ;
+; 1.670 ; array_reg[1][18]  ; DataRegister_r[18]        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.891      ;
+; 1.900 ; array_reg[0][16]  ; AccumulatorRegister_r[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.121      ;
+; 1.900 ; array_reg[0][20]  ; AccumulatorRegister_r[20] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.121      ;
+; 1.902 ; array_reg[3][22]  ; TimerCountRegister_r[22]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.123      ;
+; 1.903 ; array_reg[3][14]  ; TimerCountRegister_r[14]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.124      ;
+; 1.903 ; array_reg[0][25]  ; AccumulatorRegister_r[25] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.124      ;
+; 1.904 ; array_reg[1][19]  ; DataRegister_r[19]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.125      ;
+; 1.904 ; array_reg[1][21]  ; DataRegister_r[21]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.125      ;
+; 1.904 ; array_reg[1][28]  ; DataRegister_r[28]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.125      ;
+; 1.905 ; array_reg[3][17]  ; TimerCountRegister_r[17]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.126      ;
+; 1.905 ; array_reg[3][18]  ; TimerCountRegister_r[18]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.126      ;
+; 1.905 ; array_reg[0][12]  ; AccumulatorRegister_r[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.126      ;
+; 1.905 ; array_reg[0][14]  ; AccumulatorRegister_r[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.126      ;
+; 1.905 ; array_reg[0][15]  ; AccumulatorRegister_r[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.126      ;
+; 1.909 ; array_reg[3][24]  ; TimerCountRegister_r[24]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.130      ;
+; 1.910 ; array_reg[1][17]  ; DataRegister_r[17]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.131      ;
+; 1.912 ; array_reg[3][23]  ; TimerCountRegister_r[23]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.133      ;
+; 1.914 ; array_reg[1][30]  ; DataRegister_r[30]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.135      ;
+; 1.916 ; array_reg[2][2]   ; BaseRegister_r[2]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.137      ;
+; 1.919 ; array_reg[0][28]  ; AccumulatorRegister_r[28] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.140      ;
+; 1.919 ; array_reg[1][23]  ; DataRegister_r[23]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.140      ;
+; 1.921 ; array_reg[3][25]  ; TimerCountRegister_r[25]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.142      ;
+; 1.921 ; array_reg[0][3]   ; AccumulatorRegister_r[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.142      ;
+; 1.926 ; array_reg[3][15]  ; TimerCountRegister_r[15]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.147      ;
+; 1.926 ; array_reg[1][16]  ; DataRegister_r[16]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.147      ;
+; 1.930 ; array_reg[1][20]  ; DataRegister_r[20]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.151      ;
+; 2.033 ; array_reg[1][22]  ; DataRegister_r[22]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.254      ;
+; 2.048 ; array_reg[2][3]   ; BaseRegister_r[3]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.269      ;
+; 2.069 ; array_reg[3][19]  ; TimerCountRegister_r[19]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.290      ;
+; 2.273 ; array_reg[2][0]   ; BaseRegister_r[0]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.494      ;
+; 2.293 ; array_reg[1][31]  ; DataRegister_r[31]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.514      ;
+; 2.325 ; array_reg[1][26]  ; DataRegister_r[26]        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.546      ;
+; 2.346 ; array_reg[3][13]  ; TimerCountRegister_r[13]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.567      ;
+; 2.531 ; array_reg[0][4]   ; AccumulatorRegister_r[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.752      ;
+; 2.710 ; array_reg[0][31]  ; AccumulatorRegister_r[31] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.931      ;
+; 2.716 ; array_reg[0][5]   ; AccumulatorRegister_r[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.937      ;
+; 2.773 ; array_reg[3][21]  ; TimerCountRegister_r[21]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.994      ;
+; 2.786 ; array_reg[0][27]  ; AccumulatorRegister_r[27] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.007      ;
+; 2.887 ; array_reg[0][0]   ; AccumulatorRegister_r[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.108      ;
+; 2.914 ; array_reg[0][7]   ; AccumulatorRegister_r[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.135      ;
+; 2.925 ; array_reg[0][24]  ; AccumulatorRegister_r[24] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.146      ;
+; 2.956 ; array_reg[1][29]  ; DataRegister_r[29]        ; clk          ; clk         ; 0.000        ; 0.000      ; 3.177      ;
+; 2.958 ; array_reg[0][10]  ; AccumulatorRegister_r[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.179      ;
+; 3.014 ; array_reg[0][9]   ; AccumulatorRegister_r[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.235      ;
+; 3.026 ; array_reg[0][1]   ; AccumulatorRegister_r[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.247      ;
+; 3.174 ; array_reg[2][1]   ; BaseRegister_r[1]         ; clk          ; clk         ; 0.000        ; 0.000      ; 3.395      ;
+; 3.216 ; array_reg[0][21]  ; AccumulatorRegister_r[21] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.437      ;
+; 3.403 ; array_reg[2][4]   ; BaseRegister_r[4]         ; clk          ; clk         ; 0.000        ; 0.000      ; 3.624      ;
+; 4.090 ; array_reg[3][16]  ; TimerCountRegister_r[16]  ; clk          ; clk         ; 0.000        ; 0.000      ; 4.311      ;
+; 4.562 ; array_reg[27][12] ; ReadData_r[12]            ; clk          ; clk         ; 0.000        ; 0.000      ; 4.783      ;
+; 4.720 ; array_reg[15][29] ; ReadData_r[29]            ; clk          ; clk         ; 0.000        ; 0.000      ; 4.941      ;
+; 4.802 ; array_reg[7][16]  ; ReadData_r[16]            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.023      ;
+; 4.847 ; array_reg[31][10] ; ReadData_r[10]            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.068      ;
+; 4.848 ; array_reg[31][23] ; ReadData_r[23]            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.069      ;
+; 4.854 ; array_reg[26][0]  ; ReadData_r[0]             ; clk          ; clk         ; 0.000        ; 0.000      ; 5.075      ;
+; 4.928 ; array_reg[2][14]  ; ReadData_r[14]            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.149      ;
+; 4.992 ; array_reg[7][8]   ; ReadData_r[8]             ; clk          ; clk         ; 0.000        ; 0.000      ; 5.213      ;
+; 5.080 ; array_reg[14][27] ; ReadData_r[27]            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.301      ;
+; 5.100 ; array_reg[31][12] ; ReadData_r[12]            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.321      ;
+; 5.125 ; array_reg[31][18] ; ReadData_r[18]            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.346      ;
+; 5.157 ; array_reg[22][24] ; ReadData_r[24]            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.378      ;
+; 5.215 ; array_reg[18][0]  ; ReadData_r[0]             ; clk          ; clk         ; 0.000        ; 0.000      ; 5.436      ;
+; 5.224 ; array_reg[13][16] ; ReadData_r[16]            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.445      ;
+; 5.236 ; array_reg[28][22] ; ReadData_r[22]            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.457      ;
+; 5.397 ; array_reg[13][29] ; ReadData_r[29]            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.618      ;
+; 5.409 ; array_reg[15][8]  ; ReadData_r[8]             ; clk          ; clk         ; 0.000        ; 0.000      ; 5.630      ;
+; 5.447 ; array_reg[21][17] ; ReadData_r[17]            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.668      ;
+; 5.549 ; array_reg[13][8]  ; ReadData_r[8]             ; clk          ; clk         ; 0.000        ; 0.000      ; 5.770      ;
+; 5.586 ; array_reg[15][31] ; ReadData_r[31]            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.807      ;
+; 5.592 ; array_reg[22][12] ; ReadData_r[12]            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.813      ;
+; 5.606 ; array_reg[20][12] ; ReadData_r[12]            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.827      ;
+; 5.615 ; array_reg[14][29] ; ReadData_r[29]            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.836      ;
+; 5.618 ; array_reg[22][26] ; ReadData_r[26]            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.839      ;
+; 5.629 ; array_reg[29][17] ; ReadData_r[17]            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.850      ;
+; 5.640 ; array_reg[3][30]  ; ReadData_r[30]            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.861      ;
+; 5.681 ; array_reg[23][10] ; ReadData_r[10]            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.902      ;
+; 5.701 ; array_reg[22][18] ; ReadData_r[18]            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.922      ;
+; 5.735 ; array_reg[21][25] ; ReadData_r[25]            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.956      ;
+; 5.760 ; array_reg[30][22] ; ReadData_r[22]            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.981      ;
+; 5.762 ; array_reg[5][16]  ; ReadData_r[16]            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.983      ;
+; 5.773 ; array_reg[22][10] ; ReadData_r[10]            ; clk          ; clk         ; 0.000        ; 0.000      ; 5.994      ;
+; 5.776 ; array_reg[22][0]  ; ReadData_r[0]             ; clk          ; clk         ; 0.000        ; 0.000      ; 5.997      ;
+; 5.803 ; array_reg[25][22] ; ReadData_r[22]            ; clk          ; clk         ; 0.000        ; 0.000      ; 6.024      ;
++-------+-------------------+---------------------------+--------------+-------------+--------------+------------+------------+
 
 
 +-------------------------------------------------------------------+
@@ -406,7 +406,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 45    ; 45   ;
-; Unconstrained Input Port Paths  ; 8416  ; 8416 ;
+; Unconstrained Input Port Paths  ; 8482  ; 8482 ;
 ; Unconstrained Output Ports      ; 98    ; 98   ;
 ; Unconstrained Output Port Paths ; 98    ; 98   ;
 +---------------------------------+-------+------+
@@ -745,7 +745,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Mon Oct 30 13:56:52 2023
+    Info: Processing started: Tue Oct 31 22:13:30 2023
 Info: Command: quartus_sta RegisterFile -c RegisterFile
 Info: qsta_default_script.tcl version: #1
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -756,10 +756,10 @@ Info (334004): Delay annotation completed successfully
 Info (332104): Reading SDC File: 'RegisterFile.out.sdc'
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
-Info (332146): Worst-case setup slack is 11.030
+Info (332146): Worst-case setup slack is 10.236
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    11.030               0.000 clk 
+    Info (332119):    10.236               0.000 clk 
 Info (332146): Worst-case hold slack is 1.640
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -775,8 +775,8 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 4701 megabytes
-    Info: Processing ended: Mon Oct 30 13:56:55 2023
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Processing ended: Tue Oct 31 22:13:31 2023
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 

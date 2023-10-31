@@ -49,7 +49,7 @@ clk <= int_clk;
 		WriteRegister <= "01000"; -- 8
 		WriteData <= x"a5a5a5a5";
 		ReadRegister <= std_logic_vector(to_unsigned(6,5));
-		wait for 50.5 ns;
+		wait for 48.5 ns;
 		
 		reset <= '1';
 		wait for 12 ns;

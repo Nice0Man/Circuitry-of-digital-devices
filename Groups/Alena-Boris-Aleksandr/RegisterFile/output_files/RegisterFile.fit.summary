@@ -1,11 +1,11 @@
-Fitter Status : Successful - Mon Oct 30 13:56:49 2023
+Fitter Status : Successful - Tue Oct 31 22:13:28 2023
 Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 Revision Name : RegisterFile
 Top-level Entity Name : RegisterFile
 Family : MAX II
 Device : EPM2210F324C5
 Timing Models : Final
-Total logic elements : 1,835 / 2,210 ( 83 % )
+Total logic elements : 1,802 / 2,210 ( 82 % )
 Total pins : 144 / 272 ( 53 % )
 Total virtual pins : 0
 UFM blocks : 0 / 1 ( 0 % )
