@@ -10,7 +10,7 @@ z2
 cModel Technology
 Z0 dC:/Users/Alexandr/Desktop/Repository/Circuitry-of-digital-devices/Groups/Alena-Boris-Aleksandr/RegisterFile/simulation/modelsim
 Eregisterfile
-Z1 w1698671010
+Z1 w1701630984
 Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
@@ -24,9 +24,9 @@ VN?Z;JNXm1fWiY:K@dKhgk2
 !s100 6eD_C7`i1F;X<b^`LUDNi3
 Z7 OV;C;2021.1;73
 31
-Z8 !s110 1698671217
+Z8 !s110 1702128825
 !i10b 1
-Z9 !s108 1698671217.000000
+Z9 !s108 1702128825.000000
 Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/Alexandr/Desktop/Repository/Circuitry-of-digital-devices/Groups/Alena-Boris-Aleksandr/RegisterFile/RegisterFile.vhd|
 Z11 !s107 C:/Users/Alexandr/Desktop/Repository/Circuitry-of-digital-devices/Groups/Alena-Boris-Aleksandr/RegisterFile/RegisterFile.vhd|
 !i113 1
@@ -39,9 +39,9 @@ R4
 Z14 DEx4 work 12 registerfile 0 22 N?Z;JNXm1fWiY:K@dKhgk2
 !i122 0
 l45
-L27 77
-VhKbXEUWaJe5GUWUhe8>Qm3
-!s100 AUf49l:[lnJUjJo=DRlG>3
+L27 61
+VTRc28WQ26K[G3f<N@;B3P2
+!s100 R^LTV:iQAhco2_2G:g2mF1
 R7
 31
 R8

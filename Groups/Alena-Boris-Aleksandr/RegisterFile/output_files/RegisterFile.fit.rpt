@@ -1,5 +1,5 @@
 Fitter report for RegisterFile
-Tue Oct 31 22:13:28 2023
+Sat Dec  9 16:33:30 2023
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -57,7 +57,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------------+
 ; Fitter Summary                                                         ;
 +-----------------------+------------------------------------------------+
-; Fitter Status         ; Successful - Tue Oct 31 22:13:28 2023          ;
+; Fitter Status         ; Successful - Sat Dec  9 16:33:30 2023          ;
 ; Quartus Prime Version ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
 ; Revision Name         ; RegisterFile                                   ;
 ; Top-level Entity Name ; RegisterFile                                   ;
@@ -129,19 +129,19 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
-; Average used               ; 1.07        ;
+; Average used               ; 1.08        ;
 ; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.7%      ;
-;     Processor 3            ;   0.7%      ;
+;     Processor 2            ;   0.8%      ;
+;     Processor 3            ;   0.8%      ;
 ;     Processor 4            ;   0.7%      ;
 ;     Processor 5            ;   0.7%      ;
 ;     Processor 6            ;   0.7%      ;
 ;     Processor 7            ;   0.7%      ;
 ;     Processor 8            ;   0.7%      ;
-;     Processors 9-12        ;   0.6%      ;
+;     Processors 9-12        ;   0.7%      ;
 +----------------------------+-------------+
 
 
@@ -1276,8 +1276,8 @@ Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info (144001): Generated suppressed messages file C:/Users/Alexandr/Desktop/Repository/Circuitry-of-digital-devices/Groups/Alena-Boris-Aleksandr/RegisterFile/output_files/RegisterFile.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 5930 megabytes
-    Info: Processing ended: Tue Oct 31 22:13:28 2023
+    Info: Peak virtual memory: 5924 megabytes
+    Info: Processing ended: Sat Dec  9 16:33:30 2023
     Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:10
 
