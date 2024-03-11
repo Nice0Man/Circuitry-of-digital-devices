@@ -7,18 +7,37 @@ generic(
    N           :integer := 15 
 	);
 port ( 						  
-	clk			:IN 	std_logic;
+	ACLK			:IN 	std_logic;
+	ARESETn			:IN 	std_logic;
 	ready 		:IN	std_logic; 
-	rst			:IN 	std_logic;
 	
-	AXI_address_in 	:IN	std_logic_vector (31 downto 0);
-	AXI_data_in		:IN	std_logic_vector (31 downto 0);
-	AXI_cmd_in       : IN std_logic_vector (1 downto 0);
-	AXI_data_out  :OUT std_logic_vector (31 downto 0);
-	AXI_flag_out  :OUT std_logic;
+	AXI_AWADDR 		:IN	std_logic_vector (31 downto 0);
+	AXI_ARADDR 		:in	std_logic_vector (31 downto 0); 
+	AXI_WDATA		:IN	std_logic_vector (31 downto 0);
+	AXI_RDATA  		:OUT std_logic_vector (31 downto 0);
+	AXI_WLAST  		:IN std_logic;
+	AXI_AWLEN      :IN std_logic_vector(3 downto 0);
+	AXI_WVALID     :IN std_logic;
+	AXI_WREADY     :OUT std_logic;
+	AXI_RVALID     :OUT std_logic;
+	AXI_RREADY     :IN std_logic;
+	AXI_AWVALID    :IN std_logic;
+	AXI_AWREADY    :OUT std_logic;
+	AXI_ARVALID    :IN std_logic;
+	AXI_ARREADY    :OUT std_logic;
+	AXI_BRESP      :OUT std_logic_vector(1 downto 0);
+	AXI_BVALID     :OUT std_logic;
+	AXI_BREADY     :IN std_logic;
+	AXI_RRESP      :OUT std_logic_vector(1 downto 0);
+
 	
-	APB_address_out		:OUT 	std_logic_vector (7 downto 0);
-	APB_data_out		:OUT	std_logic_vector (31 downto 0);
+	APB_PADDR		:OUT 	std_logic_vector (7 downto 0);
+	APB_PWDATA		:OUT	std_logic_vector (31 downto 0);
+	APB_PRDATA		:IN	std_logic_vector (31 downto 0);
+	APB_PWRITE     :OUT std_logic;
+	APB_PENABLE    :OUT std_logic;
+	APB_PSELx      :OUT std_logic;
+	APB_PREADY     :IN std_logic;
 	
 	RAM_data_out : OUT std_logic_vector (31 downto 0);
 	RAM_address_out : OUT std_logic_vector (31 downto 0);
@@ -36,7 +55,7 @@ architecture FSM of control_unit_DMA IS
 
 	TYPE state_type_AXI IS (free, regfill_CPU, regfill_RAM, send_RAM, send_CPU);
 	TYPE state_type_RAM IS (free, regfill_RAM, send_RAM); 
-	TYPE state_type_APB IS (free, send_APB); 
+	TYPE state_type_APB IS (free, send_APB, regfill_APB); 
 	
 	signal state_AXI 			  		: state_type_AXI;
 	signal state_RAM 			  		: state_type_RAM;
@@ -45,36 +64,35 @@ architecture FSM of control_unit_DMA IS
 	signal buff_state_AXI 			  		: std_logic_vector (2 downto 0);
 	signal buff_state_RAM 			  		: std_logic_vector (2 downto 0);
 	signal buff_state_APB 			  		: std_logic_vector (2 downto 0);
+	signal buff_AWLEN   						: std_logic_vector(3 downto 0);
+	signal buff_BVALID                  : std_logic;
+	signal buff_flag                    : std_logic;
 	
-	signal counter                : integer range 0 to N; -- порядковый номер последовательно поступающих данных
+	signal counter                : std_logic_vector(3 downto 0); -- порядковый номер последовательно поступающих данных
 	
    signal buff_data 					: std_logic_vector (31 downto 0);
 	signal buff_address				: std_logic_vector (31 downto 0);
---	signal buff_cmd               : std_logic_vector (1 downto 0);
-	
---	signal buff_data_next 	: std_logic_vector (31 downto 0); 
---	signal buff_address_next : std_logic_vector (31 downto 0); 	
---	signal r_memo_com 		   : std_logic_vector (31 downto 0); 
---	signal buff_data_out     : std_logic_vector (31 downto 0);
---	signal count	 		: std_logic_vector (0 to 11); 
---	signal buff_address 	: std_logic_vector (0 to 15); 
+	signal RAM_Addr_count  			: std_logic_vector (31 downto 0);-----------------------------
+
 	
 	begin
 	
+	RAM_address_out <= RAM_Addr_count;---------------------------------------------------------
+	
 	state_AXI_proc:
-	process (clk)
+	process (ACLK)
 	begin 
-		IF (rst = '1') then 
+		IF (ARESETn = '0') then 
 			state_AXI <= free;
-		ELSIF (rising_edge(clk)) then
+		ELSIF (rising_edge(ACLK)) then
 			IF (ready = '1') then 
 			state_AXI <= state_AXI;
 			else
 				CASE state_AXI is 
 					when free =>
-						if (AXI_cmd_in = "11") then
+						if (AXI_AWVALID = '1') then
 							state_AXI <= regfill_CPU;
-						elsif (AXI_cmd_in = "10") then
+						elsif (AXI_ARVALID = '1') then
 							state_AXI <= regfill_RAM;
 						else
 							state_AXI <= free;
@@ -82,7 +100,6 @@ architecture FSM of control_unit_DMA IS
 				
 					when regfill_CPU =>
 						state_AXI <= send_RAM;
-					
 					when regfill_RAM => 
 						if (state_RAM = regfill_RAM) then
 							state_AXI <= send_CPU;
@@ -90,8 +107,8 @@ architecture FSM of control_unit_DMA IS
 							state_AXI <= state_AXI;
 						end if;
 						
-					when send_RAM =>                  
-						if (counter rem 3 = 0 and buff_data(31) = '0') then
+					when send_RAM =>   
+						if (AXI_WLAST = '1' and counter = buff_AWLEN) then
 							state_AXI <= free;
 						else
 							state_AXI <= regfill_CPU;
@@ -108,19 +125,16 @@ architecture FSM of control_unit_DMA IS
 	end process;
 	
 state_RAM_proc:
-	process (clk)
+	process (ACLK)
 	begin 
-		IF rst = '1' then 
+		IF ARESETn = '0' then 
 			state_RAM <= free;
-		ELSIF (rising_edge(clk)) then
-			IF (ready = '1') then 
-			state_RAM <= state_RAM;
-			else
+		ELSIF (rising_edge(ACLK)) then
 				CASE state_RAM is 
 					when free =>
-						if (buff_state_AXI = "111") then
+						if (state_AXI = send_RAM) then
 							state_RAM <= send_RAM;
-						elsif (buff_state_AXI = "100") then
+						elsif (state_AXI = regfill_RAM) then
 							state_RAM <= regfill_RAM;
 						else
 							state_RAM <= free;
@@ -133,30 +147,35 @@ state_RAM_proc:
 						state_RAM <= free;					
 						
 				end case;	
-			end if;			
 		end if;
 	end process;
 
 state_APB_proc:
-	process (clk)
+	process (ACLK,ARESETn)
 	begin 
-		IF rst = '1' then 
+		IF ARESETn = '0' then 
 			state_APB <= free;
-		ELSIF (rising_edge(clk)) then
+		ELSIF (rising_edge(ACLK)) then
 			IF (ready = '1') then 
 			state_APB <= state_APB;
 			else
 				CASE state_APB is 
 					when free =>
-						if (state_AXI = send_RAM and counter rem 3 = 0 and buff_data(31) = '0') then    
+						if (state_AXI = send_RAM and AXI_WLAST = '1' and counter = buff_AWLEN) then    
 							state_APB <= send_APB;
 						else
 							state_APB <= free;
 						end if;
 				
 					when send_APB =>
-						state_APB <= free;				
-						
+						state_APB <= free;	
+							
+					when regfill_APB =>
+						if(APB_PREADY = '1') then
+							state_APB <= free;
+						else
+							state_APB <= state_APB;
+						end if;
 				end case;	
 			end if;			
 		end if;
@@ -172,13 +191,29 @@ begin
 		counter<= counter;
 	else
 		IF (state_AXI = regfill_CPU) then 
-			counter <= counter + 1;
+			counter <= counter + "0001";
 				
 		elsif( state_AXI = send_RAM or state_AXI = send_CPU or state_AXI = send_RAM or state_AXI = regfill_RAM) then
 			counter <= counter;
 			 
 		elsif (state_AXI =  free ) then
-			counter <= 0;
+			counter <= "0000";
+		end if;
+	end if;
+	
+	
+	----------------------------------buff_AWLEN-----------------------------------------
+	IF (ready = '1') then 
+		buff_AWLEN<= buff_AWLEN;
+	else
+		IF (state_AXI = regfill_CPU and AXI_AWVALID ='1') then 
+			buff_AWLEN <= AXI_AWLEN;
+				
+		elsif( state_AXI = send_RAM or state_AXI = send_CPU or state_AXI = send_RAM or state_AXI = regfill_RAM) then
+			buff_AWLEN <= buff_AWLEN;
+			 
+		elsif (state_AXI =  free ) then
+			buff_AWLEN <= "0000";
 		end if;
 	end if;
 	
@@ -187,9 +222,12 @@ begin
 	IF (ready = '1') then 
 		buff_address<= buff_address;
 	else
-		IF (state_AXI = regfill_CPU or state_AXI = regfill_RAM) then 
-			buff_address <= AXI_address_in;
+		IF (state_AXI = regfill_CPU and AXI_AWVALID ='1') then 
+			buff_address <= AXI_AWADDR;
 				
+		elsif (state_AXI = regfill_RAM and AXI_ARVALID ='1') then 
+			buff_address <= AXI_ARADDR;
+			
 		elsif( state_AXI = send_RAM or state_AXI = send_CPU) then
 			buff_address <= buff_address;
 			 
@@ -207,8 +245,8 @@ begin
 		IF (state_RAM = regfill_RAM or state_AXI = send_CPU) then
 			buff_data <= RAM_data_in;
 		
-		elsif (state_AXI = regfill_CPU) then
-			buff_data <= AXI_data_in;
+		elsif (state_AXI = regfill_CPU and AXI_WVALID = '1') then
+			buff_data <= AXI_WDATA;
 			
 		elsif (state_AXI = send_RAM or state_AXI = regfill_RAM) then 
 			buff_data <= buff_data;
@@ -218,22 +256,37 @@ begin
 		end if;
 	end if;
 	
-	-------------------------------------buff_cmd---------------------------------------
---	IF (ready = '1') then 
---		buff_cmd<= buff_cmd;
---	else
---		IF (state_AXI = regfill_CPU or state_AXI = regfill_RAM) then 
---			buff_cmd <= AXI_address_in(1 downto 0);
-				
---		elsif( state_AXI = send_RAM or state_AXI = send_CPU) then
---			buff_cmd <= buff_cmd;
-			 
---		elsif (state_AXI =  free ) then
---			buff_cmd <= '00';
---		end if;
---	end if;
 	
+	--------------------------------------buff_BVALID-------------------------------------------------------
+		IF (ready = '1') then
+		buff_BVALID <= '0';
+	else
+		IF(state_APB = send_APB) then --state_AXI = send_RAM and AXI_WLAST = '1' and counter = buff_AWLEN
+			buff_BVALID <= '1';
+			AXI_BRESP <= "00";
+		elsif(state_AXI = free) then
+			IF(AXI_BREADY ='1' and buff_BVALID = '1') then
+				AXI_BVALID <= '0';
+			elsif(AXI_BREADY ='0' and buff_BVALID = '1') then
+				AXI_BVALID <= '1';
+			else
+				AXI_BVALID <= '0';
+			end if;
+		elsif (state_AXI = send_RAM or state_AXI = regfill_CPU or state_AXI = send_CPU or state_AXI = regfill_RAM) then 
+			buff_BVALID <= '0';
+		end if;
+	end if; 					
 	
+	----------------------------------buff_flag-----------------------------------------
+	IF (ready = '1') then 
+		buff_flag<= buff_flag;
+	else
+		if( state_AXI = free or state_AXI = send_CPU or state_AXI = regfill_RAM or state_AXI = regfill_CPU) then
+			buff_flag <= '0';
+		elsif (state_AXI = send_RAM ) then
+			buff_flag <= '1';
+		end if;
+	end if;
 	-----------------------------------------------------------------------------------------------------------
 	
 	
@@ -241,29 +294,67 @@ begin
 
 	
 	
-	------------------------------------APB_data_out------------------------------------------
+	------------------------------------APB_PWDATA------------------------------------------
 	IF (ready = '1') then
-		APB_data_out <= x"00000000";
+		APB_PWDATA <= x"00000000";
 	else
 		IF (state_APB = send_APB) then 
-			APB_data_out <= buff_address;
+			APB_PWDATA <= buff_address;
 		elsif(state_APB = free) then 
-			APB_data_out <= x"00000000";
+			APB_PWDATA <= x"00000000";
 		end if; 
 	end if;
 	
 	
-	------------------------------------APB_address_out--------------------------------------------
+	------------------------------------APB_PADDR--------------------------------------------
 	IF (ready = '1') then
-		APB_address_out <= x"00";
+		APB_PADDR <= x"00";
 	else
 		IF (state_APB = free) then 
-			APB_address_out <= x"00";
+			APB_PADDR <= x"00";
 		elsif (state_APB = send_APB) then
-			APB_address_out <= x"11";
+			APB_PADDR <= x"11";
+		end if;
+	end if; 
+	
+	------------------------------------APB_PWRITE--------------------------------------------
+	IF (ready = '1') then
+		APB_PWRITE <= 'Z';
+	else
+		IF (state_APB = free) then 
+			APB_PWRITE <= 'Z';
+		elsif (state_APB = send_APB) then
+			APB_PWRITE <= '1';
+		elsif (state_APB = regfill_APB) then
+			APB_PWRITE <= '0';
 		end if;
 	end if;
 	
+	------------------------------------APB_PENABLE--------------------------------------------
+	IF (ready = '1') then
+		APB_PENABLE <= '0';
+	else
+		IF (state_APB = free) then 
+			APB_PENABLE <= '0';
+		elsif (state_APB = send_APB) then
+			APB_PENABLE <= '1';
+		elsif (state_APB = regfill_APB) then
+			APB_PENABLE <= '1';
+		end if;
+	end if;
+	
+	------------------------------------APB_PSELx--------------------------------------------
+	IF (ready = '1') then
+		APB_PSELx <= 'Z';
+	else
+		IF (state_APB = free) then 
+			APB_PSELx <= '0';
+		elsif (state_APB = send_APB) then
+			APB_PSELx <= '1';
+		elsif (state_APB = regfill_APB) then
+			APB_PSELx <= '1';
+		end if;
+	end if;
 
 	
 	---------------------------------------RAM_address_out------------------------------------------------
@@ -271,9 +362,9 @@ begin
 		RAM_address_out <= x"00000000";
 	else
 		IF (state_RAM = free) then 
-			RAM_address_out <= x"00000000";
+--			RAM_address_out <= x"00000000";
 		elsif (state_RAM = send_RAM) then
-			RAM_address_out <= buff_address + std_logic_vector(to_unsigned(counter - 1, 32));
+			RAM_address_out <= buff_address + counter - "0001";
 		elsif(state_RAM = regfill_RAM) then
 			RAM_address_out <= buff_address;
 		end if;
@@ -284,7 +375,7 @@ begin
 		RAM_data_out <= x"00000000";
 	else
 		IF (state_RAM = free or state_RAM = regfill_RAM) then 
-			RAM_data_out <= x"00000000";
+--			RAM_data_out <= x"00000000";
 		elsif (state_RAM = send_RAM) then
 			RAM_data_out <= buff_data;
 		end if;
@@ -302,28 +393,79 @@ begin
 			RAM_cmd_out <= "10";
 		end if;
 	end if;	
-	--------------------------------------AXI_data_out-------------------------------------------------------
+	--------------------------------------AXI_RDATA-------------------------------------------------------
 	IF (ready = '1') then
-		AXI_data_out <= x"00000000";
+		AXI_RDATA <= x"00000000";
 	else
 		IF (state_AXI = free or state_AXI = regfill_RAM or state_AXI = regfill_CPU or state_AXI = send_RAM) then 
-			AXI_data_out <= x"00000000";
+			AXI_RDATA <= x"00000000";
 		elsif (state_AXI = send_CPU) then
-			AXI_data_out <= RAM_data_in;--buff_data;
+			AXI_RDATA <= RAM_data_in;--buff_data;
 		end if;
 	end if;
-	--------------------------------------AXI_flag_out-------------------------------------------------------
-	IF (ready = '1') then
-		AXI_flag_out <= '0';
+
+	
+	--------------------------------------AXI_WREADY-------------------------------------------------------
+		IF (ready = '1') then
+		AXI_WREADY <= '0';
 	else
-		IF (state_AXI = free or state_AXI = regfill_RAM or state_AXI = send_CPU or state_AXI = send_RAM) then 
-			AXI_flag_out <= '0';
-		elsif (state_AXI = regfill_CPU) then
-			AXI_flag_out <= '1';
+		IF (state_AXI = regfill_RAM or state_AXI = send_CPU) then 
+			AXI_WREADY <= '0';
+		elsif (state_AXI = free or state_AXI = regfill_CPU) then
+			AXI_WREADY <= '1';
+		elsif(state_AXI = send_RAM) then
+			IF (buff_flag = '1') then
+				AXI_WREADY <= '1';
+			else
+				AXI_WREADY <= '0';
+			end if;
 		end if;
-	end if;	
+	end if;
 	
+	--------------------------------------AXI_RVALID-------------------------------------------------------
+		IF (ready = '1') then
+		AXI_RVALID <= '0';
+	else
+		IF (state_AXI = regfill_RAM or state_AXI = send_RAM or state_AXI = regfill_CPU or state_AXI = free) then 
+			AXI_RVALID <= '0';
+		elsif (state_AXI = send_CPU) then
+			AXI_RVALID <= '1';
+			AXI_RRESP  <= "00";
+		end if;
+	end if;
 	
+	--------------------------------------AXI_AWREADY-------------------------------------------------------
+		IF (ready = '1') then
+		AXI_AWREADY <= '0';
+	else
+		IF (state_AXI = send_RAM or state_AXI = regfill_RAM or state_AXI = send_CPU) then 
+			AXI_AWREADY <= '0';
+		elsif ((state_AXI = regfill_CPU and counter = "0000")  or state_AXI = free) then
+			AXI_AWREADY <= '1';
+		end if;
+	end if;
+
+	--------------------------------------AXI_ARREADY-------------------------------------------------------
+		IF (ready = '1') then
+		AXI_ARREADY <= '0';
+	else
+		IF (state_AXI = send_RAM or state_AXI = regfill_CPU or state_AXI = send_CPU) then 
+			AXI_ARREADY <= '0';
+		elsif (state_AXI = regfill_RAM  or state_AXI = free) then
+			AXI_ARREADY <= '1';
+		end if;
+	end if;
+	
+	--------------------------------------AXI_BRESP-------------------------------------------------------
+		IF (ready = '1') then
+		AXI_BVALID <= '0';
+	else
+		if(state_AXI = free) then
+			AXI_BVALID <= buff_BVALID;
+		elsif (state_AXI = send_RAM or state_AXI = regfill_CPU or state_AXI = send_CPU or state_AXI = regfill_RAM) then 
+			AXI_BVALID <= '0';
+		end if;
+	end if; 
 	
 end process; 
 
@@ -379,8 +521,11 @@ begin
 			APB_state_out <= "000";
 			buff_state_APB <= "000";
 		when send_APB =>
-			APB_state_out <= "001";
-			buff_state_APB <= "001";
+			APB_state_out <= "110";
+			buff_state_APB <= "110";
+		when regfill_APB =>
+			APB_state_out <= "100";
+			buff_state_APB <= "100";
 		end case;
 end process;
 end FSM;

@@ -4,18 +4,19 @@ use ieee.numeric_std.all;
 
 entity RAM is 
 port (
-	rst				: in std_logic;
+	ARESETn				: in std_logic;
 	ready				: in std_logic;
-	clk				: in std_logic;
-	RAM_cmd_out			: in std_logic_vector (1 downto 0);
+	ACLK				: in std_logic;
 	
-	RAM_data_out		 	: in std_logic_vector (31 downto 0);
-	RAM_address_out			: in std_logic_vector (31 downto 0);
---	r_DMA_cs			: in std_logic;
---	r_DMA_data_in		 	: in std_logic_vector (0 to 63);
---	r_DMA_command			: in std_logic_vector (0 to 1);
---	r_DMA_address			: in std_logic_vector (0 to 15);
-	RAM_data_in			: out std_logic_vector (31 downto 0)
+	RAM_cmd_out_0			: in std_logic_vector (1 downto 0);
+	RAM_data_out_0		 	: in std_logic_vector (31 downto 0);
+	RAM_address_out_0		: in std_logic_vector (31 downto 0);
+	RAM_data_in_0			: out std_logic_vector (31 downto 0);
+	
+	RAM_cmd_out_1			: in std_logic_vector (1 downto 0);
+	RAM_data_out_1		 	: in std_logic_vector (31 downto 0);
+	RAM_address_out_1		: in std_logic_vector (31 downto 0);
+	RAM_data_in_1			: out std_logic_vector (31 downto 0)
 	);
 end RAM;
 
@@ -39,25 +40,27 @@ others 	=> x"00000000"
 
 begin
 
-process(clk)
+process(ACLK)
 begin 	
-	If rst = '1' then
-		RAM_data_in <= x"00000000";
-	elsif (rising_edge(clk)) then
-		IF (RAM_cmd_out = "11") then
-			r_memory_Ram(to_integer (unsigned(RAM_address_out))) <= RAM_data_out; 
-			RAM_data_in <= x"00000000";
-		elsif (RAM_cmd_out = "10" ) then 
-			RAM_data_in <= r_memory_Ram(to_integer (unsigned(RAM_address_out))); 
---		elsif (ready ='0') then
---			if (r_DMA_command = "01") then 
---				r_DMA_data_out <= r_memory_Ram(to_integer (unsigned(r_DMA_address))); 
---			elsif (r_DMA_command = "10") then 
---				r_memory_Ram(to_integer (unsigned(r_DMA_address))) <= r_DMA_data_in;
---				r_DMA_data_out <= x"0000000000000000";
---			end if;
+	If ARESETn = '0' then
+		RAM_data_in_0 <= x"00000000";
+	elsif (rising_edge(ACLK)) then
+		IF (RAM_cmd_out_0 = "11") then
+			r_memory_Ram(to_integer (unsigned(RAM_address_out_0))) <= RAM_data_out_0; 
+			RAM_data_in_0 <= x"00000000";
+		elsif (RAM_cmd_out_1 = "11") then
+			r_memory_Ram(to_integer (unsigned(RAM_address_out_1))) <= RAM_data_out_1; 
+			RAM_data_in_1 <= x"00000000";
+		else
+			if (RAM_cmd_out_0 = "10" ) then 
+				RAM_data_in_0 <= r_memory_Ram(to_integer (unsigned(RAM_address_out_0))); 
+			end if;
+			if (RAM_cmd_out_1 = "10" ) then 
+			RAM_data_in_1 <= r_memory_Ram(to_integer (unsigned(RAM_address_out_1)));
+			end if;
 		end if;	
 	end if;
 end process;
+
 end behave;
 	
